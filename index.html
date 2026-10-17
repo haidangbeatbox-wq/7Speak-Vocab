@@ -49,25 +49,16 @@
 
     /* Screens */
     .screen {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  padding: 20px;
-  transition: opacity 0.4s, transform 0.4s;
-  overflow-y: auto; /* enable vertical scrolling */
-  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
-}
       position: fixed;
       inset: 0;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
       z-index: 10;
       padding: 20px;
       transition: opacity 0.4s, transform 0.4s;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     .screen.hidden {
@@ -1056,6 +1047,302 @@
       border-color: rgba(59,130,246,0.5);
       color: #60a5fa;
       background: rgba(59,130,246,0.1);
+    }
+
+    /* ===== MOBILE RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      /* Screen containers */
+      .screen {
+        padding: 16px 12px;
+        align-items: flex-start;
+      }
+
+      /* Home screen */
+      .home-container {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      .logo { font-size: 2.8rem; margin-bottom: 4px; }
+      .home-title { font-size: 2rem; }
+      .home-subtitle { font-size: 0.9rem; margin-bottom: 24px; }
+
+      .stats-bar {
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+
+      .stat-number { font-size: 1.4rem; }
+      .stat-label { font-size: 0.7rem; }
+
+      /* Test grid: 3 columns on mobile */
+      .test-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .test-btn {
+        padding: 10px 6px;
+        font-size: 0.75rem;
+        border-radius: 10px;
+      }
+
+      .test-btn .word-count {
+        font-size: 0.6rem;
+      }
+
+      .section-title {
+        font-size: 0.75rem;
+        margin-bottom: 10px;
+      }
+
+      /* Mode grid: single column on mobile */
+      .mode-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .mode-card {
+        padding: 14px 16px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .mode-icon {
+        font-size: 1.4rem;
+        margin-bottom: 0;
+      }
+
+      .mode-name { font-size: 0.9rem; }
+      .mode-desc { font-size: 0.75rem; margin-top: 2px; }
+
+      /* Start button */
+      .btn-primary {
+        padding: 14px 30px;
+        font-size: 1rem;
+        border-radius: 14px;
+      }
+
+      /* Game HUD */
+      .hud {
+        padding: 10px 12px;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .hud-left { gap: 8px; }
+      .hud-right { gap: 8px; }
+
+      .btn-back {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        border-radius: 8px;
+      }
+
+      .hud-info { font-size: 0.7rem; }
+
+      .score-display {
+        padding: 5px 10px;
+        border-radius: 8px;
+        gap: 4px;
+      }
+
+      .score-icon { font-size: 0.85rem; }
+      .score-value { font-size: 0.85rem; }
+
+      .streak-display {
+        padding: 5px 10px;
+        border-radius: 8px;
+        gap: 4px;
+      }
+
+      .streak-icon { font-size: 0.85rem; }
+      .streak-value { font-size: 0.8rem; }
+
+      .timer-wrap { gap: 4px; }
+      .timer-bar { width: 70px; height: 6px; }
+
+      /* Progress bar */
+      .progress-wrap { padding: 8px 12px 0; }
+      .progress-text { font-size: 0.65rem; }
+
+      /* Part tabs */
+      .part-tabs { padding: 0 12px 10px; gap: 4px; }
+      .part-tab {
+        padding: 4px 10px;
+        font-size: 0.7rem;
+        border-radius: 8px;
+      }
+
+      /* TTS bar */
+      .tts-bar {
+        padding: 0 12px 8px;
+        gap: 6px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .tts-label { font-size: 0.7rem; }
+      .tts-toggle { font-size: 0.7rem; padding: 3px 8px; }
+      .speed-btn { font-size: 0.7rem; padding: 3px 8px; }
+
+      /* Question area */
+      .question-area {
+        padding: 16px 12px;
+      }
+
+      .question-badge {
+        padding: 4px 12px;
+        font-size: 0.7rem;
+        margin-bottom: 12px;
+      }
+
+      .question-card {
+        padding: 24px 16px;
+        border-radius: 18px;
+        margin-bottom: 16px;
+      }
+
+      .question-word {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+      }
+
+      .question-hint { font-size: 0.8rem; }
+
+      .speak-btn {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+        margin-top: 8px;
+      }
+
+      /* Options grid: single column on mobile */
+      .options-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .option-btn {
+        padding: 14px 14px;
+        font-size: 0.85rem;
+        border-radius: 12px;
+      }
+
+      .option-letter {
+        width: 24px;
+        height: 24px;
+        font-size: 0.7rem;
+        border-radius: 6px;
+        margin-right: 8px;
+      }
+
+      .option-text { margin-left: 32px; }
+
+      /* Typing mode */
+      .typing-input {
+        padding: 14px 16px;
+        font-size: 1rem;
+        border-radius: 12px;
+      }
+
+      /* Flashcard mode */
+      .flashcard-wrap {
+        height: 200px;
+        margin-bottom: 16px;
+      }
+
+      .card-face {
+        padding: 24px 16px;
+        border-radius: 18px;
+      }
+
+      .card-word { font-size: 1.8rem; }
+      .card-meaning { font-size: 1.2rem; }
+      .card-hint { font-size: 0.7rem; }
+
+      .fc-actions { gap: 8px; }
+      .btn-know, .btn-unknown {
+        padding: 12px;
+        font-size: 0.85rem;
+        border-radius: 12px;
+      }
+
+      /* Result screen */
+      .result-container {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      .result-emoji { font-size: 3.5rem; margin-bottom: 10px; }
+      .result-title { font-size: 1.8rem; }
+      .result-subtitle { font-size: 0.85rem; margin-bottom: 20px; }
+
+      .result-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .result-stat {
+        padding: 14px 6px;
+        border-radius: 12px;
+      }
+
+      .result-stat-value { font-size: 1.5rem; }
+      .result-stat-label { font-size: 0.65rem; }
+
+      .xp-gain {
+        padding: 12px 16px;
+        margin-bottom: 16px;
+        font-size: 0.9rem;
+        border-radius: 12px;
+      }
+
+      .result-buttons {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .btn-secondary {
+        padding: 14px;
+        font-size: 0.9rem;
+        border-radius: 12px;
+      }
+
+      /* Roast overlay */
+      .roast-box {
+        max-width: 85vw;
+        padding: 20px 16px;
+        border-radius: 16px;
+      }
+
+      .roast-emoji { font-size: 2.5rem; }
+      .roast-text { font-size: 0.95rem; }
+      .roast-sub { font-size: 0.7rem; }
+
+      /* Combo popup */
+      .combo-popup { font-size: 2.5rem; }
+
+      /* Toast */
+      .toast {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+        border-radius: 10px;
+        top: 60px;
+      }
+    }
+
+    /* Extra small screens (< 380px) */
+    @media (max-width: 380px) {
+      .test-grid { grid-template-columns: repeat(2, 1fr); }
+      .question-word { font-size: 1.5rem; }
+      .home-title { font-size: 1.6rem; }
+      .result-stats { grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+      .result-stat-value { font-size: 1.2rem; }
     }
   </style>
 </head>
