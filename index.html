@@ -1573,20 +1573,26 @@ if (window.speechSynthesis) {
 }
 
 function speakWord(text, lang) {
-  if (!ttsState.synth) return;
   // Clean text: strip part-of-speech tags like (n), (v) etc.
   const clean = text.replace(/\([^)]*\)/g, '').replace(/[,;]/g, '').trim();
   if (!clean) return;
 
   stopSpeak();
 
+  // For Vietnamese: use Google Translate TTS (much better quality)
+  if (lang === 'vi-VN') {
+    speakVietnamese(clean);
+    return;
+  }
+
+  // For English: use Web Speech API
+  if (!ttsState.synth) return;
   const utt = new SpeechSynthesisUtterance(clean);
   utt.lang = lang || 'en-US';
   utt.rate = ttsState.speed;
   utt.pitch = 1.0;
 
   if (lang === 'en-US' && ttsState.enVoice) utt.voice = ttsState.enVoice;
-  if (lang === 'vi-VN' && ttsState.viVoice) utt.voice = ttsState.viVoice;
 
   // Animate button
   const btn = document.getElementById('speakBtnMain');
@@ -1604,9 +1610,63 @@ function speakWord(text, lang) {
   ttsState.synth.speak(utt);
 }
 
+// Vietnamese TTS via Google Translate audio
+let viAudio = null;
+function speakVietnamese(text) {
+  if (viAudio) {
+    viAudio.pause();
+    viAudio.currentTime = 0;
+    viAudio = null;
+  }
+
+  const btn = document.getElementById('speakBtnMain');
+  if (btn) btn.classList.add('speaking');
+
+  const encoded = encodeURIComponent(text);
+  const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encoded}&tl=vi&client=tw-ob`;
+
+  viAudio = new Audio(url);
+  viAudio.playbackRate = Math.max(0.5, Math.min(ttsState.speed, 2.0));
+
+  viAudio.onended = () => {
+    if (btn) btn.classList.remove('speaking');
+    viAudio = null;
+  };
+  viAudio.onerror = () => {
+    if (btn) btn.classList.remove('speaking');
+    viAudio = null;
+    // Fallback: try Web Speech API if Google TTS fails
+    if (ttsState.synth) {
+      const utt = new SpeechSynthesisUtterance(text);
+      utt.lang = 'vi-VN';
+      utt.rate = ttsState.speed;
+      if (ttsState.viVoice) utt.voice = ttsState.viVoice;
+      ttsState.synth.speak(utt);
+    }
+  };
+
+  viAudio.play().catch(() => {
+    if (btn) btn.classList.remove('speaking');
+    // Fallback to Web Speech API
+    if (ttsState.synth) {
+      const utt = new SpeechSynthesisUtterance(text);
+      utt.lang = 'vi-VN';
+      utt.rate = ttsState.speed;
+      if (ttsState.viVoice) utt.voice = ttsState.viVoice;
+      ttsState.synth.speak(utt);
+    }
+  });
+}
+
 function stopSpeak() {
   if (ttsState.synth && ttsState.synth.speaking) {
     ttsState.synth.cancel();
+  }
+  // Also stop Vietnamese Google TTS audio
+  if (viAudio) {
+    viAudio.pause();
+    viAudio.currentTime = 0;
+    viAudio = null;
   }
   const btn = document.getElementById('speakBtnMain');
   if (btn) btn.classList.remove('speaking');
