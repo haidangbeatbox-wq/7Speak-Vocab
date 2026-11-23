@@ -994,15 +994,31 @@
       to   { box-shadow: 0 0 22px rgba(59,130,246,0.8); }
     }
 
+    .speak-btn-vi {
+      background: rgba(16,185,129,0.15);
+      border-color: rgba(16,185,129,0.4);
+      color: #34d399;
+    }
+    .speak-btn-vi:hover {
+      background: rgba(16,185,129,0.28);
+      border-color: #34d399;
+    }
+    .speak-btn-vi.speaking {
+      background: rgba(16,185,129,0.3);
+      border-color: #10b981;
+      box-shadow: 0 0 16px rgba(16,185,129,0.5);
+    }
+
     .speak-icon { font-size: 1.1rem; }
 
     /* TTS settings bar */
     .tts-bar {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       padding: 0 24px 10px;
       justify-content: flex-end;
+      flex-wrap: wrap;
     }
 
     .tts-label {
@@ -1010,25 +1026,28 @@
       color: var(--text-muted);
     }
 
-    .tts-toggle {
-      display: flex;
-      align-items: center;
-      gap: 6px;
+    .tts-mode-btn {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 4px 10px;
-      cursor: pointer;
       font-size: 0.78rem;
       color: var(--text-muted);
+      cursor: pointer;
       font-family: 'Inter', sans-serif;
       transition: all 0.2s;
     }
 
-    .tts-toggle.on {
-      border-color: rgba(59,130,246,0.5);
-      color: #60a5fa;
-      background: rgba(59,130,246,0.1);
+    .tts-mode-btn:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
+    .tts-mode-btn.active {
+      border-color: var(--accent2);
+      color: var(--accent3);
+      background: rgba(124,58,237,0.2);
+      font-weight: 700;
     }
 
     .speed-btn {
@@ -1187,7 +1206,7 @@
       }
 
       .tts-label { font-size: 0.7rem; }
-      .tts-toggle { font-size: 0.7rem; padding: 3px 8px; }
+      .tts-mode-btn { font-size: 0.7rem; padding: 3px 8px; }
       .speed-btn { font-size: 0.7rem; padding: 3px 8px; }
 
       /* Question area */
@@ -1473,8 +1492,11 @@
 
     <!-- TTS settings bar -->
     <div class="tts-bar">
-      <span class="tts-label">🔊 Phát âm tự động:</span>
-      <button class="tts-toggle on" id="ttsToggle" onclick="toggleAutoSpeak()">✅ Bật</button>
+      <span class="tts-label">🔊 Tự động đọc:</span>
+      <button class="tts-mode-btn active" id="ttsBoth" onclick="setTTSMode('both', this)">🌐 Anh & Việt</button>
+      <button class="tts-mode-btn" id="ttsEnOnly" onclick="setTTSMode('en', this)">🇬🇧 Chỉ Tiếng Anh</button>
+      <button class="tts-mode-btn" id="ttsViOnly" onclick="setTTSMode('vi', this)">🇻🇳 Chỉ Tiếng Việt</button>
+      <button class="tts-mode-btn" id="ttsOff" onclick="setTTSMode('off', this)">🔇 Tắt</button>
       <span class="tts-label" style="margin-left:6px">Tốc độ:</span>
       <button class="speed-btn" id="speedSlow" onclick="setSpeed(0.85, this)">🐢 Chậm</button>
       <button class="speed-btn active" id="speedNormal" onclick="setSpeed(1, this)">🚶 Chuẩn</button>
@@ -1544,15 +1566,34 @@ let gameState = {
   sessionWords: []
 };
 
-// ===== TTS STATE =====
+// ===== TTS STATE & ENGINE =====
 const ttsState = {
-  autoSpeak: true,
+  mode: 'both', // 'both' | 'en' | 'vi' | 'off'
   speed: 1.0,
   synth: window.speechSynthesis,
   voices: [],
   enVoice: null,
   viVoice: null
 };
+
+// Unlock speech and audio on first user touch/click
+let audioEngineUnlocked = false;
+function unlockAudioEngine() {
+  if (audioEngineUnlocked) return;
+  audioEngineUnlocked = true;
+  if (window.speechSynthesis) {
+    try { window.speechSynthesis.resume(); } catch(e) {}
+  }
+}
+window.addEventListener('click', unlockAudioEngine, { once: true });
+window.addEventListener('touchstart', unlockAudioEngine, { once: true });
+
+function setTTSMode(mode, el) {
+  ttsState.mode = mode;
+  document.querySelectorAll('.tts-mode-btn').forEach(b => b.classList.remove('active'));
+  if (el) el.classList.add('active');
+  if (mode === 'off') stopSpeak();
+}
 
 function loadVoices() {
   if (!ttsState.synth) return;
@@ -1573,7 +1614,7 @@ function loadVoices() {
     ttsState.voices.find(v => v.lang === 'vi-VN' || v.lang.startsWith('vi'));
 }
 
-// Voices load asynchronously in some browsers
+// Voices load asynchronously in modern browsers
 if (window.speechSynthesis) {
   loadVoices();
   window.speechSynthesis.onvoiceschanged = loadVoices;
@@ -1609,131 +1650,193 @@ function cleanVietnameseText(text) {
   return clean;
 }
 
-function speakWord(text, lang) {
-  if (!text) return;
-  stopSpeak();
-
-  // For Vietnamese pronunciation
-  if (lang === 'vi-VN') {
-    const cleanVi = cleanVietnameseText(text);
-    if (!cleanVi) return;
-    speakVietnamese(cleanVi);
+function speakEnglish(text, onEnd) {
+  if (!text) {
+    if (typeof onEnd === 'function') onEnd();
+    return;
+  }
+  const clean = cleanEnglishText(text);
+  if (!clean) {
+    if (typeof onEnd === 'function') onEnd();
     return;
   }
 
-  // For English pronunciation
-  const cleanEn = cleanEnglishText(text);
-  if (!cleanEn) return;
+  if (!ttsState.synth) {
+    if (typeof onEnd === 'function') onEnd();
+    return;
+  }
 
-  if (!ttsState.synth) return;
-  const utt = new SpeechSynthesisUtterance(cleanEn);
-  utt.lang = lang || 'en-US';
+  try { window.speechSynthesis.resume(); } catch(e) {}
+
+  const utt = new SpeechSynthesisUtterance(clean);
+  utt.lang = 'en-US';
   utt.rate = ttsState.speed;
   utt.pitch = 1.0;
+  if (ttsState.enVoice) utt.voice = ttsState.enVoice;
 
-  if (lang === 'en-US' && ttsState.enVoice) utt.voice = ttsState.enVoice;
+  animateSpeakButtons('speaking', 'en');
 
-  // Animate button
-  const btn = document.getElementById('speakBtnMain');
-  if (btn) btn.classList.add('speaking');
-
-  utt.onend = () => {
-    const b = document.getElementById('speakBtnMain');
-    if (b) b.classList.remove('speaking');
+  let finished = false;
+  const finish = () => {
+    if (finished) return;
+    finished = true;
+    animateSpeakButtons('', 'en');
+    if (typeof onEnd === 'function') onEnd();
   };
-  utt.onerror = () => {
-    const b = document.getElementById('speakBtnMain');
-    if (b) b.classList.remove('speaking');
-  };
+
+  utt.onend = finish;
+  utt.onerror = finish;
+
+  setTimeout(() => {
+    if (!finished && window.speechSynthesis && !window.speechSynthesis.speaking) {
+      finish();
+    }
+  }, 3500);
 
   ttsState.synth.speak(utt);
 }
 
-// Vietnamese TTS: uses high-quality Web Speech API if available, with Google TTS fallback
 let viAudio = null;
-function speakVietnamese(text) {
-  // If browser has a dedicated Vietnamese voice (Edge Natural or Google), use it for crystal clear speech
-  if (ttsState.synth && ttsState.viVoice) {
-    const utt = new SpeechSynthesisUtterance(text);
-    utt.lang = 'vi-VN';
-    utt.voice = ttsState.viVoice;
-    utt.rate = Math.max(0.85, Math.min(ttsState.speed, 1.15));
-    utt.pitch = 1.0;
-
-    const btn = document.getElementById('speakBtnMain');
-    if (btn) btn.classList.add('speaking');
-
-    utt.onend = () => {
-      if (btn) btn.classList.remove('speaking');
-    };
-    utt.onerror = () => {
-      if (btn) btn.classList.remove('speaking');
-      playGoogleVietnameseTTS(text);
-    };
-
-    ttsState.synth.speak(utt);
+function speakVietnamese(text, onEnd) {
+  if (!text) {
+    if (typeof onEnd === 'function') onEnd();
+    return;
+  }
+  const clean = cleanVietnameseText(text);
+  if (!clean) {
+    if (typeof onEnd === 'function') onEnd();
     return;
   }
 
-  // Fallback to Google Translate TTS
-  playGoogleVietnameseTTS(text);
+  // 1. Try Web Speech API if browser has a recognized Vietnamese voice
+  if (ttsState.synth && ttsState.viVoice) {
+    try {
+      window.speechSynthesis.resume();
+      const utt = new SpeechSynthesisUtterance(clean);
+      utt.lang = 'vi-VN';
+      utt.voice = ttsState.viVoice;
+      utt.rate = Math.max(0.85, Math.min(ttsState.speed, 1.15));
+      utt.pitch = 1.0;
+
+      animateSpeakButtons('speaking', 'vi');
+
+      let finished = false;
+      const finish = () => {
+        if (finished) return;
+        finished = true;
+        animateSpeakButtons('', 'vi');
+        if (typeof onEnd === 'function') onEnd();
+      };
+
+      utt.onend = finish;
+      utt.onerror = () => {
+        finish();
+        playGoogleVietnameseAudio(clean, onEnd);
+      };
+
+      ttsState.synth.speak(utt);
+      return;
+    } catch(err) {
+      console.warn('Web Speech vi failed, falling back to Google TTS audio:', err);
+    }
+  }
+
+  // 2. Fallback to Google Translate TTS audio (with gtx client)
+  playGoogleVietnameseAudio(clean, onEnd);
 }
 
-function playGoogleVietnameseTTS(text) {
+function playGoogleVietnameseAudio(text, onEnd) {
   if (viAudio) {
-    viAudio.pause();
-    viAudio.currentTime = 0;
+    try { viAudio.pause(); } catch(e) {}
     viAudio = null;
   }
 
-  const btn = document.getElementById('speakBtnMain');
-  if (btn) btn.classList.add('speaking');
+  animateSpeakButtons('speaking', 'vi');
 
   const encoded = encodeURIComponent(text);
-  const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encoded}&tl=vi&client=tw-ob`;
+  const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encoded}&tl=vi&client=gtx`;
 
   viAudio = new Audio(url);
-  // Keep 1.0x native playback rate to avoid phase-vocoder time-stretch distortion on tonal vowels
   viAudio.playbackRate = 1.0;
 
-  viAudio.onended = () => {
-    if (btn) btn.classList.remove('speaking');
+  let finished = false;
+  const finish = () => {
+    if (finished) return;
+    finished = true;
+    animateSpeakButtons('', 'vi');
     viAudio = null;
+    if (typeof onEnd === 'function') onEnd();
   };
+
+  viAudio.onended = finish;
   viAudio.onerror = () => {
-    if (btn) btn.classList.remove('speaking');
-    viAudio = null;
-    // Fallback: try Web Speech API even without matched voice
+    finish();
     if (ttsState.synth) {
-      const utt = new SpeechSynthesisUtterance(text);
-      utt.lang = 'vi-VN';
-      utt.rate = 0.9;
-      ttsState.synth.speak(utt);
+      try {
+        window.speechSynthesis.resume();
+        const utt = new SpeechSynthesisUtterance(text);
+        utt.lang = 'vi-VN';
+        utt.rate = 0.9;
+        if (typeof onEnd === 'function') utt.onend = onEnd;
+        ttsState.synth.speak(utt);
+      } catch(e) {}
     }
   };
 
-  viAudio.play().catch(() => {
-    if (btn) btn.classList.remove('speaking');
-    if (ttsState.synth) {
-      const utt = new SpeechSynthesisUtterance(text);
-      utt.lang = 'vi-VN';
-      utt.rate = 0.9;
-      ttsState.synth.speak(utt);
-    }
+  const playPromise = viAudio.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      finish();
+      if (ttsState.synth) {
+        try {
+          window.speechSynthesis.resume();
+          const utt = new SpeechSynthesisUtterance(text);
+          utt.lang = 'vi-VN';
+          utt.rate = 0.9;
+          if (typeof onEnd === 'function') utt.onend = onEnd;
+          ttsState.synth.speak(utt);
+        } catch(e) {}
+      }
+    });
+  }
+}
+
+function speakWordPair(enText, viText) {
+  stopSpeak();
+  speakEnglish(enText, () => {
+    setTimeout(() => {
+      speakVietnamese(viText);
+    }, 350);
+  });
+}
+
+function speakWord(text, lang) {
+  if (!text) return;
+  stopSpeak();
+  if (lang === 'vi-VN') {
+    speakVietnamese(text);
+  } else {
+    speakEnglish(text);
+  }
+}
+
+function animateSpeakButtons(cls, type) {
+  const selector = (type === 'vi') ? '.speak-btn-vi' : '#speakBtnMain, .speak-btn-en';
+  document.querySelectorAll(selector).forEach(b => {
+    if (cls) b.classList.add(cls);
+    else b.classList.remove('speaking');
   });
 }
 
 function stopSpeak() {
   if (ttsState.synth && ttsState.synth.speaking) {
-    ttsState.synth.cancel();
+    try { ttsState.synth.cancel(); } catch(e) {}
   }
   if (viAudio) {
-    viAudio.pause();
-    viAudio.currentTime = 0;
+    try { viAudio.pause(); } catch(e) {}
     viAudio = null;
   }
-  const btn = document.getElementById('speakBtnMain');
-  if (btn) btn.classList.remove('speaking');
+  document.querySelectorAll('.speak-btn').forEach(b => b.classList.remove('speaking'));
 }
 
 function toggleAutoSpeak() {
@@ -1987,13 +2090,25 @@ function showQuestion() {
     showReverseQuestion(word, area);
   }
 
-  // Auto-pronounce: English for normal modes, Vietnamese for reverse mode
-  if (ttsState.autoSpeak) {
-    if (gameState.mode === 'reverse') {
-      setTimeout(() => speakWord(word.meaning, 'vi-VN'), 300);
-    } else {
-      setTimeout(() => speakWord(word.word, 'en-US'), 300);
-    }
+  // Auto-pronounce according to ttsState.mode
+  if (ttsState.mode !== 'off') {
+    setTimeout(() => {
+      if (gameState.mode === 'reverse') {
+        if (ttsState.mode === 'both' || ttsState.mode === 'vi') {
+          speakVietnamese(word.meaning);
+        } else if (ttsState.mode === 'en') {
+          speakEnglish(word.word);
+        }
+      } else {
+        if (ttsState.mode === 'both') {
+          speakWordPair(word.word, word.meaning);
+        } else if (ttsState.mode === 'en') {
+          speakEnglish(word.word);
+        } else if (ttsState.mode === 'vi') {
+          speakVietnamese(word.meaning);
+        }
+      }
+    }, 300);
   }
 
   // Start timer
@@ -2008,10 +2123,15 @@ function showQuizQuestion(word, area) {
     <div class="question-badge">📖 ${word.part} • ${word.test}</div>
     <div class="question-card">
       <div class="question-word">${word.word}</div>
-      <button class="speak-btn" id="speakBtnMain" onclick="speakWord('${escapeQuote(word.word)}', 'en-US')">
-        <span class="speak-icon">🔊</span> Nghe phát âm
-      </button>
-      <div class="question-hint" style="margin-top:10px">Nghĩa tiếng Việt của từ này là gì?</div>
+      <div style="display:flex;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap">
+        <button class="speak-btn speak-btn-en" id="speakBtnMain" onclick="speakWord('${escapeQuote(word.word)}', 'en-US')">
+          <span class="speak-icon">🔊</span> Tiếng Anh
+        </button>
+        <button class="speak-btn speak-btn-vi" onclick="speakWord('${escapeQuote(word.meaning)}', 'vi-VN')">
+          <span class="speak-icon">🔊</span> Nghĩa tiếng Việt
+        </button>
+      </div>
+      <div class="question-hint" style="margin-top:12px">Nghĩa tiếng Việt của từ này là gì?</div>
     </div>
     <div class="options-grid" id="optionsGrid">
       ${options.map((opt, i) => `
@@ -2030,10 +2150,15 @@ function showReverseQuestion(word, area) {
     <div class="question-badge">🔄 ${word.part} • ${word.test}</div>
     <div class="question-card">
       <div class="question-word">${word.meaning}</div>
-      <button class="speak-btn" id="speakBtnMain" onclick="speakWord('${escapeQuote(word.meaning)}', 'vi-VN')">
-        <span class="speak-icon">🔊</span> Nghe tiếng Việt
-      </button>
-      <div class="question-hint" style="margin-top:10px">Từ tiếng Anh tương ứng là gì?</div>
+      <div style="display:flex;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap">
+        <button class="speak-btn speak-btn-vi" onclick="speakWord('${escapeQuote(word.meaning)}', 'vi-VN')">
+          <span class="speak-icon">🔊</span> Tiếng Việt
+        </button>
+        <button class="speak-btn speak-btn-en" id="speakBtnMain" onclick="speakWord('${escapeQuote(word.word)}', 'en-US')">
+          <span class="speak-icon">🔊</span> Tiếng Anh
+        </button>
+      </div>
+      <div class="question-hint" style="margin-top:12px">Từ tiếng Anh tương ứng là gì?</div>
     </div>
     <div class="options-grid" id="optionsGrid">
       ${options.map((opt, i) => `
@@ -2051,10 +2176,15 @@ function showTypingQuestion(word, area) {
     <div class="question-badge">⌨️ ${word.part} • ${word.test}</div>
     <div class="question-card">
       <div class="question-word">${word.word}</div>
-      <button class="speak-btn" id="speakBtnMain" onclick="speakWord('${escapeQuote(word.word)}', 'en-US')">
-        <span class="speak-icon">🔊</span> Nghe phát âm
-      </button>
-      <div class="question-hint" style="margin-top:10px">Gõ nghĩa tiếng Việt</div>
+      <div style="display:flex;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap">
+        <button class="speak-btn speak-btn-en" id="speakBtnMain" onclick="speakWord('${escapeQuote(word.word)}', 'en-US')">
+          <span class="speak-icon">🔊</span> Tiếng Anh
+        </button>
+        <button class="speak-btn speak-btn-vi" onclick="speakWord('${escapeQuote(word.meaning)}', 'vi-VN')">
+          <span class="speak-icon">🔊</span> Nghe nghĩa
+        </button>
+      </div>
+      <div class="question-hint" style="margin-top:12px">Gõ nghĩa tiếng Việt</div>
     </div>
     <div class="typing-area">
       <input type="text" class="typing-input" id="typingInput" 
@@ -2088,7 +2218,7 @@ function showFlashcard(word, area) {
       <button class="speak-btn" id="speakBtnMain" onclick="event.stopPropagation();speakWord('${escapeQuote(word.word)}', 'en-US')">
         <span class="speak-icon">🔊</span> Tiếng Anh
       </button>
-      <button class="speak-btn" style="border-color:rgba(16,185,129,0.4);color:#34d399;background:rgba(16,185,129,0.15);" onclick="event.stopPropagation();speakWord('${escapeQuote(word.meaning)}', 'vi-VN')">
+      <button class="speak-btn speak-btn-vi" onclick="event.stopPropagation();speakWord('${escapeQuote(word.meaning)}', 'vi-VN')">
         <span class="speak-icon">🔊</span> Tiếng Việt
       </button>
     </div>
@@ -2119,20 +2249,19 @@ function answerQuiz(btn, selected, correct) {
   if (isCorrect) {
     btn.classList.add('correct');
     onCorrect();
-    // Read correct answer in Vietnamese
-    setTimeout(() => speakWord(word.meaning, 'vi-VN'), 400);
   } else {
     btn.classList.add('wrong');
     onWrong();
-    // Re-read the English word so user remembers
-    setTimeout(() => speakWord(word.word, 'en-US'), 400);
   }
+
+  // Always pronounce the Vietnamese meaning when an answer is selected
+  setTimeout(() => speakVietnamese(word.meaning), 400);
 
   setTimeout(() => {
     gameState.isAnswered = false;
     gameState.currentIndex++;
     showQuestion();
-  }, 1400);
+  }, 2200);
 }
 
 function answerReverseQuiz(btn, selected, correct) {
@@ -2153,19 +2282,18 @@ function answerReverseQuiz(btn, selected, correct) {
   if (isCorrect) {
     btn.classList.add('correct');
     onCorrect();
-    // Read the correct English word
-    setTimeout(() => speakWord(correct, 'en-US'), 400);
   } else {
     btn.classList.add('wrong');
     onWrong();
-    setTimeout(() => speakWord(correct, 'en-US'), 400);
   }
+
+  setTimeout(() => speakEnglish(correct), 400);
 
   setTimeout(() => {
     gameState.isAnswered = false;
     gameState.currentIndex++;
     showQuestion();
-  }, 1400);
+  }, 2000);
 }
 
 function checkTyping() {
@@ -2173,7 +2301,8 @@ function checkTyping() {
   if (!input || gameState.isAnswered) return;
   
   const userAnswer = input.value.trim().toLowerCase();
-  const correct = gameState.currentWords[gameState.currentIndex].meaning.toLowerCase();
+  const word = gameState.currentWords[gameState.currentIndex];
+  const correct = word.meaning.toLowerCase();
   
   // Fuzzy match - check if key words match
   const isCorrect = fuzzyMatch(userAnswer, correct);
@@ -2190,16 +2319,19 @@ function checkTyping() {
     // Show correct answer
     const correctEl = document.createElement('div');
     correctEl.style.cssText = 'color:var(--green);font-size:0.9rem;text-align:center;margin-top:8px;font-weight:600;';
-    correctEl.textContent = '✅ Đáp án: ' + gameState.currentWords[gameState.currentIndex].meaning;
+    correctEl.textContent = '✅ Đáp án: ' + word.meaning;
     input.parentElement.appendChild(correctEl);
     onWrong();
   }
+
+  // Pronounce the Vietnamese meaning
+  setTimeout(() => speakVietnamese(word.meaning), 350);
 
   setTimeout(() => {
     gameState.isAnswered = false;
     gameState.currentIndex++;
     showQuestion();
-  }, 1800);
+  }, 2200);
 }
 
 function flipCard(wrap) {
