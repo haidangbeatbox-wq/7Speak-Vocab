@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
   <title>7Speak - ETS 2023 Vocab Game</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1607,11 +1608,12 @@ function loadVoices() {
     ttsState.voices.find(v => v.lang.startsWith('en-US')) ||
     ttsState.voices.find(v => v.lang.startsWith('en'));
 
-  // Prioritize natural/online Vietnamese voices (HoaiMy, NamMinh, Google tiếng Việt)
+  // Prioritize genuine natural/online Vietnamese voices only (e.g. HoaiMy, NamMinh, Google tiếng Việt)
+  // Strictly filter out any desktop fallback voices like Microsoft David/Zira
   ttsState.viVoice =
     ttsState.voices.find(v => (v.lang === 'vi-VN' || v.lang.startsWith('vi')) && (v.name.includes('Natural') || v.name.includes('Online'))) ||
     ttsState.voices.find(v => (v.lang === 'vi-VN' || v.lang.startsWith('vi')) && v.name.includes('Google')) ||
-    ttsState.voices.find(v => v.lang === 'vi-VN' || v.lang.startsWith('vi'));
+    ttsState.voices.find(v => (v.lang === 'vi-VN' || v.lang.startsWith('vi')) && !v.name.includes('Desktop') && !v.name.includes('David') && !v.name.includes('Zira'));
 }
 
 // Voices load asynchronously in modern browsers
@@ -1697,6 +1699,8 @@ function speakEnglish(text, onEnd) {
 }
 
 let viAudio = null;
+
+// Vietnamese TTS: uses Google's authentic Vietnamese neural voice with no-referrer
 function speakVietnamese(text, onEnd) {
   if (!text) {
     if (typeof onEnd === 'function') onEnd();
@@ -1708,8 +1712,8 @@ function speakVietnamese(text, onEnd) {
     return;
   }
 
-  // 1. Try Web Speech API if browser has a recognized Vietnamese voice
-  if (ttsState.synth && ttsState.viVoice) {
+  // 1. If browser has a genuine native Vietnamese voice (e.g. Edge Natural HoaiMy/NamMinh), we can use it
+  if (ttsState.synth && ttsState.viVoice && (ttsState.viVoice.lang === 'vi-VN' || ttsState.viVoice.lang.startsWith('vi')) && !ttsState.viVoice.name.includes('Desktop')) {
     try {
       window.speechSynthesis.resume();
       const utt = new SpeechSynthesisUtterance(clean);
@@ -1737,11 +1741,11 @@ function speakVietnamese(text, onEnd) {
       ttsState.synth.speak(utt);
       return;
     } catch(err) {
-      console.warn('Web Speech vi failed, falling back to Google TTS audio:', err);
+      console.warn('Web Speech vi failed, using Google Translate TTS:', err);
     }
   }
 
-  // 2. Fallback to Google Translate TTS audio (with gtx client)
+  // 2. Default & primary for Vietnamese: Google Translate TTS audio (pure, authentic Vietnamese voice)
   playGoogleVietnameseAudio(clean, onEnd);
 }
 
@@ -1754,9 +1758,11 @@ function playGoogleVietnameseAudio(text, onEnd) {
   animateSpeakButtons('speaking', 'vi');
 
   const encoded = encodeURIComponent(text);
-  const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encoded}&tl=vi&client=gtx`;
+  const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encoded}&tl=vi&client=tw-ob`;
 
-  viAudio = new Audio(url);
+  viAudio = new Audio();
+  viAudio.referrerPolicy = "no-referrer";
+  viAudio.src = url;
   viAudio.playbackRate = 1.0;
 
   let finished = false;
@@ -1769,34 +1775,16 @@ function playGoogleVietnameseAudio(text, onEnd) {
   };
 
   viAudio.onended = finish;
-  viAudio.onerror = () => {
+  viAudio.onerror = (err) => {
+    console.warn('Google TTS audio load error:', err);
     finish();
-    if (ttsState.synth) {
-      try {
-        window.speechSynthesis.resume();
-        const utt = new SpeechSynthesisUtterance(text);
-        utt.lang = 'vi-VN';
-        utt.rate = 0.9;
-        if (typeof onEnd === 'function') utt.onend = onEnd;
-        ttsState.synth.speak(utt);
-      } catch(e) {}
-    }
   };
 
   const playPromise = viAudio.play();
   if (playPromise !== undefined) {
-    playPromise.catch(() => {
+    playPromise.catch((err) => {
+      console.warn('Audio play was blocked or prevented:', err);
       finish();
-      if (ttsState.synth) {
-        try {
-          window.speechSynthesis.resume();
-          const utt = new SpeechSynthesisUtterance(text);
-          utt.lang = 'vi-VN';
-          utt.rate = 0.9;
-          if (typeof onEnd === 'function') utt.onend = onEnd;
-          ttsState.synth.speak(utt);
-        } catch(e) {}
-      }
     });
   }
 }
