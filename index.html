@@ -191,6 +191,73 @@
       margin-top: 2px;
     }
 
+    /* Test filter bar */
+    .test-filter-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .test-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .test-tab-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .test-tab-btn:hover {
+      color: var(--text);
+      border-color: var(--accent);
+    }
+    .test-tab-btn.active {
+      background: rgba(124, 58, 237, 0.25);
+      border-color: var(--accent2);
+      color: #fff;
+      box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+    }
+    .test-quick-actions {
+      display: flex;
+      gap: 6px;
+    }
+    .btn-quick {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-quick:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--text);
+    }
+    .test-btn.rc-test {
+      border-color: rgba(59, 130, 246, 0.4);
+    }
+    .test-btn.rc-test:hover {
+      border-color: #60a5fa;
+      background: rgba(59, 130, 246, 0.15);
+    }
+    .test-btn.rc-test.selected {
+      border-color: #38bdf8;
+      background: rgba(56, 189, 248, 0.25);
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+    }
+
     /* Mode selector */
     .mode-grid {
       display: grid;
@@ -1399,15 +1466,15 @@
   <div class="home-container">
     <div class="logo">🗣️</div>
     <h1 class="home-title">7Speak</h1>
-    <p class="home-subtitle">Học từ vựng ETS 2023 theo từng Test • Gây nghiện 🔥</p>
+    <p class="home-subtitle">Học từ vựng ETS TOEIC theo từng Test & ETS 2026 RC • Gây nghiện 🔥</p>
 
     <div class="stats-bar">
       <div class="stat-item">
-        <span class="stat-number" id="totalWordsDisplay">2047</span>
+        <span class="stat-number" id="totalWordsDisplay">2849</span>
         <span class="stat-label">Từ vựng</span>
       </div>
       <div class="stat-item">
-        <span class="stat-number">10</span>
+        <span class="stat-number" id="totalTestsDisplay">20</span>
         <span class="stat-label">Tests</span>
       </div>
       <div class="stat-item">
@@ -1421,6 +1488,17 @@
     </div>
 
     <p class="section-title">📚 Chọn Test</p>
+    <div class="test-filter-bar">
+      <div class="test-tabs">
+        <button class="test-tab-btn active" id="tabAllTests" onclick="setTestCategory('all')">🌐 Tất cả (20)</button>
+        <button class="test-tab-btn" id="tabStdTests" onclick="setTestCategory('standard')">🎧 ETS Tổng hợp (1-10)</button>
+        <button class="test-tab-btn" id="tabRcTests" onclick="setTestCategory('rc')">📖 ETS 2026 RC (1-10)</button>
+      </div>
+      <div class="test-quick-actions">
+        <button class="btn-quick" onclick="selectAllTests(true)">✅ Chọn hết</button>
+        <button class="btn-quick" onclick="selectAllTests(false)">❌ Bỏ chọn</button>
+      </div>
+    </div>
     <div class="test-grid" id="testGrid"></div>
 
     <p class="section-title" style="margin-top:8px">🎮 Chế độ chơi</p>
@@ -1891,22 +1969,70 @@ function createStars() {
 }
 
 // ===== HOME SCREEN =====
-function buildTestGrid() {
-  const grid = document.getElementById('testGrid');
-  grid.innerHTML = '';
-  
+let currentTestCategory = 'all';
+
+function setTestCategory(cat) {
+  currentTestCategory = cat;
+  document.querySelectorAll('.test-tab-btn').forEach(b => b.classList.remove('active'));
+  if (cat === 'all') document.getElementById('tabAllTests')?.classList.add('active');
+  else if (cat === 'standard') document.getElementById('tabStdTests')?.classList.add('active');
+  else if (cat === 'rc') document.getElementById('tabRcTests')?.classList.add('active');
+  buildTestGrid();
+}
+
+function selectAllTests(select) {
+  const visibleTests = getFilteredTests();
+  if (select) {
+    visibleTests.forEach(t => {
+      if (!gameState.selectedTests.includes(t)) gameState.selectedTests.push(t);
+    });
+  } else {
+    gameState.selectedTests = gameState.selectedTests.filter(t => !visibleTests.includes(t));
+    if (gameState.selectedTests.length === 0) {
+      gameState.selectedTests = [visibleTests[0] || 'TEST 1'];
+    }
+  }
+  buildTestGrid();
+}
+
+function getFilteredTests() {
   const tests = Object.keys(VOCAB_DATA).sort((a, b) => {
-    const na = parseInt(a.replace('TEST ', ''));
-    const nb = parseInt(b.replace('TEST ', ''));
+    const isRCA = a.startsWith('RC');
+    const isRCB = b.startsWith('RC');
+    if (isRCA !== isRCB) return isRCA ? 1 : -1;
+    const na = parseInt(a.match(/\d+/)?.[0] || '0', 10);
+    const nb = parseInt(b.match(/\d+/)?.[0] || '0', 10);
     return na - nb;
   });
 
-  tests.forEach(testKey => {
-    const totalWords = Object.values(VOCAB_DATA[testKey]).flat().length;
+  if (currentTestCategory === 'standard') {
+    return tests.filter(t => !t.startsWith('RC'));
+  } else if (currentTestCategory === 'rc') {
+    return tests.filter(t => t.startsWith('RC'));
+  }
+  return tests;
+}
+
+function buildTestGrid() {
+  const grid = document.getElementById('testGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  
+  const filteredTests = getFilteredTests();
+
+  filteredTests.forEach(testKey => {
+    const totalWords = Object.values(VOCAB_DATA[testKey]).reduce((s, p) => s + (Array.isArray(p) ? p.length : 0), 0);
     const btn = document.createElement('div');
-    btn.className = 'test-btn' + (testKey === 'TEST 1' ? ' selected' : '');
+    const isSelected = gameState.selectedTests.includes(testKey);
+    const isRC = testKey.startsWith('RC');
+    btn.className = 'test-btn' + (isSelected ? ' selected' : '') + (isRC ? ' rc-test' : '');
     btn.dataset.test = testKey;
-    btn.innerHTML = `${testKey.replace('TEST ', 'Test ')}<span class="word-count">${totalWords} từ</span>`;
+    
+    const displayTitle = isRC 
+      ? `📘 RC Test ${testKey.match(/\d+/)?.[0] || ''}` 
+      : `🎧 Test ${testKey.match(/\d+/)?.[0] || ''}`;
+
+    btn.innerHTML = `${displayTitle}<span class="word-count">${totalWords} từ</span>`;
     btn.onclick = () => toggleTest(btn, testKey);
     grid.appendChild(btn);
   });
@@ -1941,6 +2067,9 @@ function updateHomeStats() {
   }, 0);
   const totalDisplay = document.getElementById('totalWordsDisplay');
   if (totalDisplay && totalWords > 0) totalDisplay.textContent = totalWords;
+
+  const totalTestsDisplay = document.getElementById('totalTestsDisplay');
+  if (totalTestsDisplay) totalTestsDisplay.textContent = Object.keys(VOCAB_DATA).length;
 
   const progress = JSON.parse(localStorage.getItem('toeicProgress') || '{}');
   const mastered = Object.values(progress.mastered || {}).filter(Boolean).length;
@@ -2102,7 +2231,11 @@ function showQuizQuestion(word, area) {
   area.innerHTML = `
     <div class="question-badge">📖 ${word.part} • ${word.test}</div>
     <div class="question-card">
-      <div class="question-word">${word.word}</div>
+      <div class="question-word">
+        ${word.word}
+        ${word.pos ? `<span style="font-size:0.85rem;color:var(--primary-light);font-weight:600;margin-left:6px;background:rgba(99,102,241,0.15);padding:2px 8px;border-radius:6px">(${word.pos})</span>` : ''}
+      </div>
+      ${word.ipa ? `<div style="font-size:1rem;color:var(--text-muted);margin-top:4px;font-style:italic;font-family:monospace">${word.ipa}</div>` : ''}
       <div style="display:flex;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap">
         <button class="speak-btn speak-btn-en" id="speakBtnMain" onclick="speakWord('${escapeQuote(word.word)}', 'en-US')">
           <span class="speak-icon">🔊</span> Tiếng Anh
@@ -2130,6 +2263,7 @@ function showReverseQuestion(word, area) {
     <div class="question-badge">🔄 ${word.part} • ${word.test}</div>
     <div class="question-card">
       <div class="question-word">${word.meaning}</div>
+      ${word.pos ? `<div style="font-size:0.85rem;color:var(--text-muted);margin-top:4px">Loại từ: <b style="color:var(--primary-light)">${word.pos}</b></div>` : ''}
       <div style="display:flex;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap">
         <button class="speak-btn speak-btn-vi" onclick="speakWord('${escapeQuote(word.meaning)}', 'vi-VN')">
           <span class="speak-icon">🔊</span> Tiếng Việt
@@ -2155,7 +2289,11 @@ function showTypingQuestion(word, area) {
   area.innerHTML = `
     <div class="question-badge">⌨️ ${word.part} • ${word.test}</div>
     <div class="question-card">
-      <div class="question-word">${word.word}</div>
+      <div class="question-word">
+        ${word.word}
+        ${word.pos ? `<span style="font-size:0.85rem;color:var(--primary-light);font-weight:600;margin-left:6px;background:rgba(99,102,241,0.15);padding:2px 8px;border-radius:6px">(${word.pos})</span>` : ''}
+      </div>
+      ${word.ipa ? `<div style="font-size:1rem;color:var(--text-muted);margin-top:4px;font-style:italic;font-family:monospace">${word.ipa}</div>` : ''}
       <div style="display:flex;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap">
         <button class="speak-btn speak-btn-en" id="speakBtnMain" onclick="speakWord('${escapeQuote(word.word)}', 'en-US')">
           <span class="speak-icon">🔊</span> Tiếng Anh
@@ -2185,12 +2323,17 @@ function showFlashcard(word, area) {
         <div class="card-face card-front">
           <div class="card-hint">TIẾNG ANH</div>
           <div class="card-word">${word.word}</div>
+          ${word.ipa ? `<div style="font-size:1.05rem;color:var(--primary-light);margin-top:6px;font-family:monospace">${word.ipa}</div>` : ''}
+          ${word.pos ? `<div style="margin-top:8px"><span style="font-size:0.8rem;background:rgba(255,255,255,0.1);padding:3px 10px;border-radius:12px;color:var(--text-muted)">${word.pos}</span></div>` : ''}
           <div style="font-size:0.85rem;color:var(--text-muted);margin-top:12px">👆 Tap để xem nghĩa</div>
         </div>
         <div class="card-face card-back">
           <div class="card-hint">TIẾNG VIỆT</div>
           <div class="card-meaning">${word.meaning}</div>
-          <div class="card-word" style="font-size:1.2rem;margin-top:8px;color:var(--text-muted)">${word.word}</div>
+          <div class="card-word" style="font-size:1.15rem;margin-top:8px;color:var(--text-muted)">
+            ${word.word} ${word.ipa ? `<span style="font-size:0.95rem;font-family:monospace">(${word.ipa})</span>` : ''}
+          </div>
+          ${word.example ? `<div style="font-size:0.95rem;color:#93c5fd;margin-top:12px;font-style:italic;background:rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;line-height:1.4">💬 "${word.example}"</div>` : ''}
         </div>
       </div>
     </div>
