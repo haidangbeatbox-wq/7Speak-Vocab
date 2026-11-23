@@ -2,14 +2,9 @@
   "TEST 1": {
     "Part 1": [
       {
-        "id": 180,
-        "word": "TOEIC Speaking,",
-        "meaning": "150 TOEIC Writing"
-      },
-      {
         "id": 1,
         "word": "jogging (v)",
-        "meaning": "đi bộ nhanh"
+        "meaning": "chạy bộ"
       },
       {
         "id": 2,
@@ -29,7 +24,7 @@
       {
         "id": 5,
         "word": "porch (n)",
-        "meaning": "cổng vòm"
+        "meaning": "hiên nhà, mái hiên"
       },
       {
         "id": 6,
@@ -44,12 +39,12 @@
       {
         "id": 8,
         "word": "pile (v)",
-        "meaning": "lên"
+        "meaning": "chất đống, xếp chồng lên"
       },
       {
         "id": 9,
         "word": "delicious (adj)",
-        "meaning": "đồ"
+        "meaning": "thơm ngon, ngon"
       },
       {
         "id": 10,
@@ -64,12 +59,12 @@
       {
         "id": 12,
         "word": "aisle (n)",
-        "meaning": "đi"
+        "meaning": "lối đi (giữa các hàng ghế/kệ hàng)"
       },
       {
         "id": 13,
-        "word": "cover (v) làm",
-        "meaning": "thay ca (theo ngữ"
+        "word": "cover (v)",
+        "meaning": "làm thay ca (theo ngữ cảnh), bao bọc"
       },
       {
         "id": 14,
@@ -106,7 +101,7 @@
       {
         "id": 20,
         "word": "take a look",
-        "meaning": "nhìn vào cái gì đó 1"
+        "meaning": "nhìn vào cái gì đó một chút, xem qua"
       },
       {
         "id": 21,
@@ -141,7 +136,7 @@
       {
         "id": 27,
         "word": "productive (adj)",
-        "meaning": "năng"
+        "meaning": "năng suất, có hiệu quả"
       },
       {
         "id": 28,
@@ -151,7 +146,7 @@
       {
         "id": 29,
         "word": "submit (v)",
-        "meaning": "nộp"
+        "meaning": "nộp, đệ trình"
       },
       {
         "id": 30,
@@ -165,8 +160,8 @@
       },
       {
         "id": 32,
-        "word": "senior (n) kinh",
-        "meaning": "nghiệm chuyên môn"
+        "word": "senior (n)",
+        "meaning": "người có thâm niên, người có kinh nghiệm chuyên môn"
       },
       {
         "id": 33,
@@ -191,7 +186,7 @@
       {
         "id": 37,
         "word": "field (n)",
-        "meaning": "sân"
+        "meaning": "lĩnh vực, sân đấu, cánh đồng"
       },
       {
         "id": 38,
@@ -211,7 +206,7 @@
       {
         "id": 41,
         "word": "souvenir (n)",
-        "meaning": "lưu niệm"
+        "meaning": "đồ lưu niệm, quà lưu niệm"
       },
       {
         "id": 42,
@@ -272,8 +267,8 @@
       },
       {
         "id": 53,
-        "word": "once in a",
-        "meaning": "thỉnh thoảng, không"
+        "word": "once in a while",
+        "meaning": "thỉnh thoảng, hiếm khi"
       },
       {
         "id": 54,
@@ -303,12 +298,12 @@
       {
         "id": 60,
         "word": "inspection (n)",
-        "meaning": "tra"
+        "meaning": "sự kiểm tra, thanh tra"
       },
       {
         "id": 61,
         "word": "confusion (n)",
-        "meaning": "sự nhầm lần"
+        "meaning": "sự nhầm lẫn"
       },
       {
         "id": 62,
@@ -318,12 +313,12 @@
       {
         "id": 63,
         "word": "dealership (n)",
-        "meaning": "người đại lý"
+        "meaning": "đại lý, nhà phân phối"
       },
       {
         "id": 64,
         "word": "inquiry (n)",
-        "meaning": "yêu"
+        "meaning": "yêu cầu, câu hỏi thắc mắc"
       },
       {
         "id": 65,
@@ -337,13 +332,13 @@
       },
       {
         "id": 67,
-        "word": "negotiate (vS)can to open",
-        "meaning": "ont hStưudơenergsn leưlợng"
+        "word": "negotiate (v)",
+        "meaning": "thương lượng, đàm phán"
       },
       {
         "id": 68,
         "word": "progress (n)",
-        "meaning": "độ"
+        "meaning": "tiến độ, sự tiến bộ"
       },
       {
         "id": 69,
@@ -352,8 +347,8 @@
       },
       {
         "id": 70,
-        "word": "capacity",
-        "meaning": "suất"
+        "word": "capacity (n)",
+        "meaning": "sức chứa, công suất"
       },
       {
         "id": 71,
@@ -368,7 +363,7 @@
       {
         "id": 73,
         "word": "look over",
-        "meaning": "cái gì đó"
+        "meaning": "kiểm tra, xem qua"
       },
       {
         "id": 74,
@@ -392,8 +387,8 @@
       },
       {
         "id": 78,
-        "word": "straightfoward (adj)",
-        "meaning": "đơn giản, dễ hiểu"
+        "word": "straightforward (adj)",
+        "meaning": "đơn giản, dễ hiểu"
       },
       {
         "id": 79,
@@ -467,8 +462,8 @@
       },
       {
         "id": 93,
-        "word": "last-minute",
-        "meaning": "phút"
+        "word": "last-minute (adj)",
+        "meaning": "vào phút cuối"
       },
       {
         "id": 94,
@@ -483,7 +478,7 @@
       {
         "id": 96,
         "word": "spot (n)",
-        "meaning": "(trên tàu,"
+        "meaning": "chỗ, vị trí (trên tàu, xe...)"
       },
       {
         "id": 97,
@@ -513,22 +508,22 @@
       {
         "id": 102,
         "word": "currently (adv)",
-        "meaning": "gần đây"
+        "meaning": "hiện tại, hiện nay"
       },
       {
         "id": 104,
         "word": "affordable (adj)",
-        "meaning": "được"
+        "meaning": "có thể chi trả được, giá cả phải chăng"
       },
       {
         "id": 105,
         "word": "interior (n)",
-        "meaning": "nội"
+        "meaning": "nội thất, bên trong"
       },
       {
         "id": 106,
         "word": "reclining (adj)",
-        "meaning": "để tựa vào"
+        "meaning": "ngả lưng, có thể ngả ra sau (ghế)"
       },
       {
         "id": 107,
@@ -563,17 +558,17 @@
       {
         "id": 113,
         "word": "habitat (n)",
-        "meaning": "môi trường"
+        "meaning": "môi trường sống"
       },
       {
         "id": 114,
-        "word": "forest",
-        "meaning": "bảo tồn rừng"
+        "word": "forest conservation",
+        "meaning": "bảo tồn rừng"
       },
       {
         "id": 115,
         "word": "refillable (adj)",
-        "meaning": "(chai nước có thể rót"
+        "meaning": "có thể làm đầy lại (chai nước có thể rót thêm)"
       },
       {
         "id": 116,
@@ -595,17 +590,17 @@
       {
         "id": 119,
         "word": "biodiversity (n)",
-        "meaning": "dạng sinh học"
+        "meaning": "đa dạng sinh học"
       },
       {
         "id": 120,
         "word": "consult (v)",
-        "meaning": "tư"
+        "meaning": "tư vấn, tham khảo ý kiến"
       },
       {
         "id": 121,
         "word": "apply (v)",
-        "meaning": "áp lên da (trong bài"
+        "meaning": "thoa lên da, bôi lên da (trong bài đọc)"
       },
       {
         "id": 122,
@@ -660,12 +655,12 @@
       {
         "id": 133,
         "word": "proposal (n)",
-        "meaning": "sự"
+        "meaning": "sự đề xuất, bản đề xuất"
       },
       {
         "id": 134,
-        "word": "competitor (n",
-        "meaning": "đối thủ"
+        "word": "competitor (n)",
+        "meaning": "đối thủ"
       },
       {
         "id": 135,
@@ -674,8 +669,8 @@
       },
       {
         "id": 136,
-        "word": "certification (nS)can to open",
-        "meaning": "on Scthudứenergsn nelhận"
+        "word": "certification (n)",
+        "meaning": "chứng nhận, giấy chứng nhận"
       },
       {
         "id": 137,
@@ -700,7 +695,7 @@
       {
         "id": 141,
         "word": "coral reef",
-        "meaning": "đá vôi rặng san hô"
+        "meaning": "rạn san hô, rặng san hô"
       },
       {
         "id": 143,
@@ -720,7 +715,7 @@
       {
         "id": 146,
         "word": "biologist (n)",
-        "meaning": "nhà nghiên cứu về"
+        "meaning": "nhà sinh vật học"
       },
       {
         "id": 147,
@@ -730,7 +725,7 @@
       {
         "id": 148,
         "word": "impressive (adj)",
-        "meaning": "tượng"
+        "meaning": "ấn tượng"
       },
       {
         "id": 149,
@@ -750,7 +745,7 @@
       {
         "id": 152,
         "word": "outstanding (adj)",
-        "meaning": "sắc"
+        "meaning": "xuất sắc, nổi bật"
       },
       {
         "id": 153,
@@ -759,23 +754,23 @@
       },
       {
         "id": 154,
-        "word": "dispute (nS)can to open",
-        "meaning": "on Sttruadenehrs ncehlấp"
+        "word": "dispute (n)",
+        "meaning": "sự tranh chấp"
       },
       {
         "id": 155,
         "word": "prototype (n)",
-        "meaning": "nguyên"
+        "meaning": "nguyên mẫu"
       },
       {
         "id": 156,
         "word": "compartment (n)",
-        "meaning": "phòng riêng biệt"
+        "meaning": "ngăn để đồ, khoang (tàu, xe)"
       },
       {
         "id": 157,
         "word": "revise (v)",
-        "meaning": "lại"
+        "meaning": "chỉnh sửa lại, xem lại"
       },
       {
         "id": 158,
@@ -787,7 +782,7 @@
       {
         "id": 159,
         "word": "quarter (n)",
-        "meaning": "quý"
+        "meaning": "quý (3 tháng)"
       },
       {
         "id": 160,
@@ -807,7 +802,7 @@
       {
         "id": 163,
         "word": "manage (v)",
-        "meaning": "handle"
+        "meaning": "quản lý, xử lý (= handle)"
       },
       {
         "id": 164,
@@ -852,12 +847,12 @@
       {
         "id": 172,
         "word": "feature (v,n)",
-        "meaning": "(v) mô tả , (n) chức"
+        "meaning": "(v) có đặc điểm, (n) tính năng, chức năng"
       },
       {
         "id": 173,
         "word": "poet (n)",
-        "meaning": "bài thơ"
+        "meaning": "nhà thơ"
       },
       {
         "id": 174,
@@ -887,7 +882,7 @@
       {
         "id": 180,
         "word": "coat (v)",
-        "meaning": "phủ lên (ngữ cảnh:áo"
+        "meaning": "phủ lên, bao phủ (ngữ cảnh: áo khoác)"
       },
       {
         "id": 181,
@@ -912,12 +907,12 @@
       {
         "id": 186,
         "word": "grant (v)",
-        "meaning": "trợ cấp"
+        "meaning": "cấp, ban cho, chấp thuận"
       },
       {
         "id": 187,
-        "word": "assistance",
-        "meaning": "trợ cộng"
+        "word": "assistance (n)",
+        "meaning": "sự hỗ trợ, sự giúp đỡ"
       },
       {
         "id": 188,
@@ -986,8 +981,8 @@
       },
       {
         "id": 202,
-        "word": "strict (adj) khắt",
-        "meaning": "khe, nghiêm ngặt"
+        "word": "strict (adj)",
+        "meaning": "khắt khe, nghiêm ngặt"
       },
       {
         "id": 203,
@@ -1069,7 +1064,7 @@
       {
         "id": 219,
         "word": "obtain (v)",
-        "meaning": "= get"
+        "meaning": "đạt được, có được (= get)"
       },
       {
         "id": 220,
@@ -1079,7 +1074,7 @@
       {
         "id": 221,
         "word": "propane (n)",
-        "meaning": "xăng"
+        "meaning": "khí propane, khí gas"
       },
       {
         "id": 222,
@@ -1098,8 +1093,8 @@
       },
       {
         "id": 225,
-        "word": "troubleshoot (n)",
-        "meaning": "sửa lỗi"
+        "word": "troubleshoot (v)",
+        "meaning": "sửa lỗi, khắc phục sự cố"
       },
       {
         "id": 226,
@@ -1114,7 +1109,7 @@
       {
         "id": 228,
         "word": "transit (n)",
-        "meaning": "sự dịch chuyển"
+        "meaning": "sự vận chuyển, quá cảnh, giao thông công cộng"
       },
       {
         "id": 229,
@@ -1148,13 +1143,13 @@
       },
       {
         "id": 235,
-        "word": "rechargable (adj)",
+        "word": "rechargeable (adj)",
         "meaning": "có thể sạc được"
       },
       {
         "id": 236,
         "word": "indicate (v)",
-        "meaning": "chỉ định"
+        "meaning": "chỉ ra, cho biết, biểu thị"
       },
       {
         "id": 237,
@@ -1171,7 +1166,7 @@
       {
         "id": 239,
         "word": "material (n)",
-        "meaning": "(tùy ngữ cảnh)"
+        "meaning": "nguyên liệu, vật liệu, tài liệu"
       },
       {
         "id": 240,
@@ -1201,7 +1196,7 @@
       {
         "id": 245,
         "word": "imprint (n)",
-        "meaning": "sách = book"
+        "meaning": "dấu ấn, thương hiệu xuất bản"
       },
       {
         "id": 246,
@@ -1211,7 +1206,7 @@
       {
         "id": 247,
         "word": "uplifting (adj)",
-        "meaning": "hơn = cheer up"
+        "meaning": "nâng cao tinh thần, làm phấn chấn (= cheer up)"
       },
       {
         "id": 248,
@@ -1226,22 +1221,22 @@
       {
         "id": 250,
         "word": "contract (v)",
-        "meaning": "hơn"
+        "meaning": "thu nhỏ lại, co lại, ký hợp đồng"
       },
       {
         "id": 251,
         "word": "accomplishment (n)",
-        "meaning": "achievement"
+        "meaning": "thành tựu, sự hoàn thành (= achievement)"
       },
       {
         "id": 252,
         "word": "publication (n)",
-        "meaning": "phẩm"
+        "meaning": "ấn phẩm, sự xuất bản"
       },
       {
         "id": 253,
         "word": "perspective (n)",
-        "meaning": "khía cạnh, góc nhìn ="
+        "meaning": "khía cạnh, góc nhìn"
       },
       {
         "id": 254,
@@ -1251,7 +1246,7 @@
       {
         "id": 255,
         "word": "orchestra (n)",
-        "meaning": "buổi hòa nhạc"
+        "meaning": "dàn nhạc, dàn nhạc giao hưởng"
       },
       {
         "id": 256,
@@ -1286,7 +1281,7 @@
       {
         "id": 262,
         "word": "suppose (v)",
-        "meaning": "đáng lẽ là"
+        "meaning": "cho là, giả sử, nghĩ rằng"
       },
       {
         "id": 263,
@@ -1321,7 +1316,7 @@
       {
         "id": 269,
         "word": "essential (adj)",
-        "meaning": "= crucial"
+        "meaning": "thiết yếu, quan trọng (= crucial)"
       },
       {
         "id": 270,
@@ -1355,8 +1350,8 @@
       },
       {
         "id": 276,
-        "word": "approve (v) phê",
-        "meaning": "duyệt, chấp nhận"
+        "word": "approve (v)",
+        "meaning": "phê duyệt, chấp nhận"
       },
       {
         "id": 277,
@@ -1376,7 +1371,7 @@
       {
         "id": 280,
         "word": "degree (n)",
-        "meaning": "văn"
+        "meaning": "văn bằng, bằng cấp"
       },
       {
         "id": 281,
@@ -1410,7 +1405,7 @@
       },
       {
         "id": 287,
-        "word": "motivitation (n)",
+        "word": "motivation (n)",
         "meaning": "động lực"
       },
       {
@@ -1421,7 +1416,7 @@
       {
         "id": 289,
         "word": "sustainable (adj)",
-        "meaning": "vững"
+        "meaning": "bền vững"
       },
       {
         "id": 290,
@@ -1455,8 +1450,8 @@
       },
       {
         "id": 297,
-        "word": "strategic (n)",
-        "meaning": "chiến lược"
+        "word": "strategic (adj)",
+        "meaning": "chiến lược, có tính chiến lược"
       },
       {
         "id": 298,
@@ -1466,7 +1461,7 @@
       {
         "id": 299,
         "word": "emphasize (v)",
-        "meaning": "mạnh"
+        "meaning": "nhấn mạnh"
       },
       {
         "id": 300,
@@ -1476,7 +1471,7 @@
       {
         "id": 301,
         "word": "inspire (v)",
-        "meaning": "cảm hứng"
+        "meaning": "truyền cảm hứng"
       },
       {
         "id": 302,
@@ -1496,7 +1491,7 @@
       {
         "id": 305,
         "word": "configuration (n)",
-        "meaning": "cấu"
+        "meaning": "cấu hình"
       },
       {
         "id": 306,
@@ -1555,7 +1550,7 @@
       },
       {
         "id": 318,
-        "word": "out going (adj)",
+        "word": "outgoing (adj)",
         "meaning": "tính tình cởi mở"
       },
       {
@@ -1586,12 +1581,12 @@
       {
         "id": 324,
         "word": "qualify (v)",
-        "meaning": "cho là, gọi là"
+        "meaning": "đủ điều kiện, đủ tiêu chuẩn"
       },
       {
         "id": 325,
         "word": "designer (n)",
-        "meaning": "nội"
+        "meaning": "nhà thiết kế (nội thất)"
       },
       {
         "id": 326,
@@ -1601,7 +1596,7 @@
       {
         "id": 327,
         "word": "generate (v)",
-        "meaning": "xuất"
+        "meaning": "tạo ra, sản xuất, phát sinh"
       },
       {
         "id": 328,
@@ -1621,7 +1616,7 @@
       {
         "id": 331,
         "word": "reference (n)",
-        "meaning": "sự tài liệu"
+        "meaning": "tài liệu tham khảo, sự tham khảo"
       },
       {
         "id": 332,
@@ -1630,8 +1625,8 @@
       },
       {
         "id": 333,
-        "word": "eager (v)",
-        "meaning": "nóng lòng"
+        "word": "eager (adj)",
+        "meaning": "nóng lòng, háo hức"
       },
       {
         "id": 334,
@@ -1645,8 +1640,8 @@
       },
       {
         "id": 337,
-        "word": "add-ons",
-        "meaning": "thêm vào"
+        "word": "add-on (n)",
+        "meaning": "tiện ích bổ sung, phần thêm vào"
       },
       {
         "id": 338,
@@ -1666,7 +1661,7 @@
       {
         "id": 341,
         "word": "feedback (n)",
-        "meaning": "phản"
+        "meaning": "phản hồi, ý kiến đóng góp"
       },
       {
         "id": 342,
@@ -1680,8 +1675,8 @@
       },
       {
         "id": 344,
-        "word": "element (nS)can to open",
-        "meaning": "on Studyeêérusn teôĺ"
+        "word": "element (n)",
+        "meaning": "yếu tố"
       },
       {
         "id": 345,
@@ -1691,12 +1686,12 @@
       {
         "id": 346,
         "word": "overload (v)",
-        "meaning": "chất đầy"
+        "meaning": "làm quá tải, chất quá tải"
       },
       {
         "id": 347,
         "word": "recall (v)",
-        "meaning": "thu hồi, thu hồi"
+        "meaning": "thu hồi, nhớ lại"
       },
       {
         "id": 348,
@@ -1731,7 +1726,7 @@
       {
         "id": 354,
         "word": "basis (n)",
-        "meaning": "tảng, cơ sở"
+        "meaning": "nền tảng, cơ sở"
       },
       {
         "id": 355,
@@ -1786,7 +1781,7 @@
       {
         "id": 367,
         "word": "arise (v)",
-        "meaning": "dấy lên, tăng lên"
+        "meaning": "nảy sinh, phát sinh, xuất hiện"
       },
       {
         "id": 368,
@@ -1805,8 +1800,8 @@
       },
       {
         "id": 371,
-        "word": "run-through (v)",
-        "meaning": "thiết"
+        "word": "run-through (n)",
+        "meaning": "sự tập dượt, xem qua"
       },
       {
         "id": 373,
@@ -1841,12 +1836,12 @@
       {
         "id": 379,
         "word": "overpriced (adj)",
-        "meaning": "= expensive"
+        "meaning": "quá đắt (= expensive)"
       },
       {
         "id": 380,
-        "word": "navigate (vS)can to open",
-        "meaning": "on Sđtuiêd̀eue rhsnưeớlng"
+        "word": "navigate (v)",
+        "meaning": "điều hướng, định hướng"
       },
       {
         "id": 381,
@@ -1905,8 +1900,8 @@
       },
       {
         "id": 392,
-        "word": "drop-down menu (n) trên",
-        "meaning": "màn hình máy tính"
+        "word": "drop-down menu (n)",
+        "meaning": "menu thả xuống (trên màn hình máy tính)"
       },
       {
         "id": 393,
@@ -1921,7 +1916,7 @@
       {
         "id": 395,
         "word": "fee (n)",
-        "meaning": "phí"
+        "meaning": "chi phí, học phí, lệ phí"
       },
       {
         "id": 396,
@@ -1955,7 +1950,7 @@
       },
       {
         "id": 403,
-        "word": "ancedote (n)",
+        "word": "anecdote (n)",
         "meaning": "giai thoại"
       },
       {
@@ -1965,8 +1960,8 @@
       },
       {
         "id": 405,
-        "word": "captivate (v) làm",
-        "meaning": "say đắm, quyến rũ"
+        "word": "captivate (v)",
+        "meaning": "làm say đắm, quyến rũ"
       },
       {
         "id": 406,
@@ -2010,12 +2005,12 @@
       {
         "id": 1,
         "word": "dig (v)",
-        "meaning": "đào"
+        "meaning": "đào, bới"
       },
       {
         "id": 2,
         "word": "prop (v)",
-        "meaning": "mở ra (theo ngữ cảnh"
+        "meaning": "chống, tựa, chèn giữ (prop open: chèn giữ mở)"
       },
       {
         "id": 3,
@@ -2025,7 +2020,7 @@
       {
         "id": 4,
         "word": "access (n)",
-        "meaning": "cảnh)"
+        "meaning": "lối vào, sự tiếp cận, quyền truy cập"
       },
       {
         "id": 5,
@@ -2044,8 +2039,8 @@
       },
       {
         "id": 8,
-        "word": "responsible",
-        "meaning": "chịu trách"
+        "word": "responsible (adj)",
+        "meaning": "chịu trách nhiệm"
       },
       {
         "id": 9,
@@ -2079,15 +2074,15 @@
       },
       {
         "id": 15,
-        "word": "well-known",
-        "meaning": "nổi"
+        "word": "well-known (adj)",
+        "meaning": "nổi tiếng"
       }
     ],
     "Part 2": [
       {
         "id": 16,
         "word": "latest (adj)",
-        "meaning": "mới"
+        "meaning": "mới nhất, gần đây nhất"
       },
       {
         "id": 17,
@@ -2096,7 +2091,7 @@
       },
       {
         "id": 18,
-        "word": "quarterly adv)",
+        "word": "quarterly (adv)",
         "meaning": "hàng quý"
       },
       {
@@ -2131,8 +2126,8 @@
       },
       {
         "id": 26,
-        "word": "hand off không",
-        "meaning": "tham gia trực tiếp"
+        "word": "hands-off (adj)",
+        "meaning": "không can thiệp, không tham gia trực tiếp"
       },
       {
         "id": 27,
@@ -2179,7 +2174,7 @@
       {
         "id": 36,
         "word": "occasion (n)",
-        "meaning": "dịp"
+        "meaning": "dịp, cơ hội, sự kiện"
       },
       {
         "id": 37,
@@ -2189,7 +2184,7 @@
       {
         "id": 38,
         "word": "progress (n)",
-        "meaning": "quy trình"
+        "meaning": "sự tiến bộ, tiến độ"
       },
       {
         "id": 39,
@@ -2219,7 +2214,7 @@
       {
         "id": 44,
         "word": "tile (n)",
-        "meaning": "tường, sàn)"
+        "meaning": "gạch lát (tường, sàn)"
       },
       {
         "id": 45,
@@ -2251,7 +2246,7 @@
       {
         "id": 51,
         "word": "acres of",
-        "meaning": "lường)"
+        "meaning": "hàng mẫu Anh, diện tích rất lớn (đơn vị đo lường)"
       },
       {
         "id": 52,
@@ -2261,12 +2256,12 @@
       {
         "id": 53,
         "word": "convert (v)",
-        "meaning": "chuyển đổi từ A sáng"
+        "meaning": "chuyển đổi từ A sang B"
       },
       {
         "id": 54,
-        "word": "performance",
-        "meaning": "đánh giá năng lực"
+        "word": "performance appraisal",
+        "meaning": "đánh giá năng lực, đánh giá hiệu quả công việc"
       },
       {
         "id": 55,
@@ -2290,23 +2285,23 @@
       },
       {
         "id": 59,
-        "word": "premiere (n) đầu",
-        "meaning": "tiên của bất cứ loại"
+        "word": "premiere (n)",
+        "meaning": "buổi công chiếu, buổi ra mắt đầu tiên"
       },
       {
         "id": 60,
-        "word": "in for a treat hay",
-        "meaning": "trải nghiệm điều gì đó"
+        "word": "in for a treat",
+        "meaning": "chắc chắn sẽ thích thú, trải nghiệm điều gì đó thú vị/tuyệt vời"
       },
       {
         "id": 61,
         "word": "launch (v)",
-        "meaning": "ra"
+        "meaning": "ra mắt, tung ra, phát hành"
       },
       {
         "id": 62,
         "word": "mixed bag (n)",
-        "meaning": "thứ hoặc"
+        "meaning": "tập hợp gồm cả điểm tốt lẫn điểm xấu (hỗn hợp nhiều thứ)"
       },
       {
         "id": 63,
@@ -2315,8 +2310,8 @@
       },
       {
         "id": 64,
-        "word": "critic (nS)can to open",
-        "meaning": "onn Shtuàd eperhsnêe lbình"
+        "word": "critic (n)",
+        "meaning": "nhà phê bình"
       },
       {
         "id": 65,
@@ -2396,7 +2391,7 @@
       {
         "id": 80,
         "word": "outpace (v)",
-        "meaning": "qua"
+        "meaning": "vượt qua, phát triển nhanh hơn"
       },
       {
         "id": 81,
@@ -2483,7 +2478,7 @@
       {
         "id": 97,
         "word": "fabric (n)",
-        "meaning": "vải"
+        "meaning": "vải, chất liệu vải"
       },
       {
         "id": 98,
@@ -2503,7 +2498,7 @@
       {
         "id": 101,
         "word": "effort (n)",
-        "meaning": "lực"
+        "meaning": "nỗ lực, sự cố gắng"
       },
       {
         "id": 102,
@@ -2523,7 +2518,7 @@
       {
         "id": 105,
         "word": "replace (v)",
-        "meaning": "thay"
+        "meaning": "thay thế"
       },
       {
         "id": 106,
@@ -2558,7 +2553,7 @@
       {
         "id": 112,
         "word": "brochure (n)",
-        "meaning": "phẩm quảng cáo"
+        "meaning": "ấn phẩm quảng cáo, tờ gấp quảng cáo"
       },
       {
         "id": 113,
@@ -2568,7 +2563,7 @@
       {
         "id": 114,
         "word": "input (n)",
-        "meaning": "vào"
+        "meaning": "dữ liệu đầu vào, ý kiến đóng góp"
       },
       {
         "id": 115,
@@ -2593,7 +2588,7 @@
       {
         "id": 119,
         "word": "review (v)",
-        "meaning": "quyết"
+        "meaning": "xem xét, đánh giá, kiểm tra lại"
       },
       {
         "id": 120,
@@ -2637,8 +2632,8 @@
       },
       {
         "id": 128,
-        "word": "modernization (v)",
-        "meaning": "hiện đại hóa"
+        "word": "modernization (n)",
+        "meaning": "sự hiện đại hóa"
       },
       {
         "id": 129,
@@ -2652,13 +2647,13 @@
       },
       {
         "id": 131,
-        "word": "intended menu menu",
-        "meaning": "đã được chỉ định"
+        "word": "intended menu",
+        "meaning": "thực đơn dự kiến, thực đơn định sẵn"
       },
       {
         "id": 132,
         "word": "oblige (v)",
-        "meaning": "theo"
+        "meaning": "bắt buộc, tuân theo"
       },
       {
         "id": 134,
@@ -2680,7 +2675,7 @@
       {
         "id": 138,
         "word": "bend (v)",
-        "meaning": "cong"
+        "meaning": "uốn cong, bẻ cong"
       },
       {
         "id": 139,
@@ -2720,7 +2715,7 @@
       {
         "id": 146,
         "word": "gallery (n)",
-        "meaning": "buổi triển lãm"
+        "meaning": "phòng trưng bày, phòng triển lãm"
       },
       {
         "id": 147,
@@ -2765,7 +2760,7 @@
       {
         "id": 155,
         "word": "goods (n)",
-        "meaning": "hàng hóa ="
+        "meaning": "hàng hóa, sản phẩm"
       },
       {
         "id": 156,
@@ -2805,7 +2800,7 @@
       {
         "id": 163,
         "word": "machinist (n)",
-        "meaning": "điều khiển máy"
+        "meaning": "thợ máy, thợ cơ khí, người vận hành máy"
       },
       {
         "id": 164,
@@ -2819,8 +2814,8 @@
       },
       {
         "id": 166,
-        "word": "tight",
-        "meaning": "những deadline sát"
+        "word": "tight deadline",
+        "meaning": "hạn chót gấp, ngặt nghèo"
       },
       {
         "id": 167,
@@ -2840,12 +2835,12 @@
       {
         "id": 170,
         "word": "manufacture (v)",
-        "meaning": "sản"
+        "meaning": "sản xuất, chế tạo"
       },
       {
         "id": 171,
-        "word": "component (nS)can to optehn",
-        "meaning": "àonn hSt updeheâr̀snn,e lbộ phận"
+        "word": "component (n)",
+        "meaning": "thành phần, bộ phận"
       }
     ],
     "Part 7": [
@@ -2881,8 +2876,8 @@
       },
       {
         "id": 178,
-        "word": "string quartet",
-        "meaning": "violin, 1 viola, 1 cello)"
+        "word": "string quartet (n)",
+        "meaning": "tứ tấu đàn dây (2 violin, 1 viola, 1 cello)"
       },
       {
         "id": 179,
@@ -2907,7 +2902,7 @@
       {
         "id": 183,
         "word": "semiannual (adj)",
-        "meaning": "2 1 năm"
+        "meaning": "hai lần một năm, nửa năm một lần"
       },
       {
         "id": 184,
@@ -2936,8 +2931,8 @@
       },
       {
         "id": 189,
-        "word": "diassatisfied (adj)",
-        "meaning": "bất mãn"
+        "word": "dissatisfied (adj)",
+        "meaning": "không hài lòng, bất mãn"
       },
       {
         "id": 191,
@@ -2997,12 +2992,12 @@
       {
         "id": 202,
         "word": "prime (adj)",
-        "meaning": "nhất"
+        "meaning": "hàng đầu, tốt nhất, chủ yếu"
       },
       {
         "id": 203,
         "word": "destination (n)",
-        "meaning": "điểm"
+        "meaning": "điểm đến"
       },
       {
         "id": 204,
@@ -3012,7 +3007,7 @@
       {
         "id": 205,
         "word": "waterfront (n)",
-        "meaning": "bến tàu"
+        "meaning": "khu ven bờ sông, khu ven biển"
       },
       {
         "id": 206,
@@ -3021,8 +3016,8 @@
       },
       {
         "id": 207,
-        "word": "corporate (adScj)an to open",
-        "meaning": "on S ctuôdenegrs nteyl lớn"
+        "word": "corporate (adj)",
+        "meaning": "(thuộc) công ty lớn, tập đoàn"
       },
       {
         "id": 208,
@@ -3031,7 +3026,7 @@
       },
       {
         "id": 209,
-        "word": "headquarter (n)",
+        "word": "headquarters (n)",
         "meaning": "trụ sở chính"
       },
       {
@@ -3062,7 +3057,7 @@
       {
         "id": 215,
         "word": "conclude (v)",
-        "meaning": "luận"
+        "meaning": "kết luận"
       },
       {
         "id": 216,
@@ -3072,12 +3067,12 @@
       {
         "id": 217,
         "word": "title (v)",
-        "meaning": "đặt tên (tiêu"
+        "meaning": "đặt tên, đặt tiêu đề"
       },
       {
         "id": 218,
-        "word": "eco-friendly",
-        "meaning": "thân thiện với môi"
+        "word": "eco-friendly (adj)",
+        "meaning": "thân thiện với môi trường"
       },
       {
         "id": 219,
@@ -3091,8 +3086,8 @@
       },
       {
         "id": 221,
-        "word": "outline (v,n)",
-        "meaning": "phác họa, nêu những"
+        "word": "outline (v, n)",
+        "meaning": "phác họa, nêu những nét chính; bản phác thảo"
       },
       {
         "id": 222,
@@ -3106,28 +3101,28 @@
       },
       {
         "id": 224,
-        "word": "family-run",
-        "meaning": "doanh nghiệp do gia"
+        "word": "family-run (adj)",
+        "meaning": "do gia đình quản lý, do gia đình tự điều hành"
       },
       {
         "id": 225,
-        "word": "generation (nS)can to open",
-        "meaning": "on Studteheêrś nhelệ"
+        "word": "generation (n)",
+        "meaning": "thế hệ"
       },
       {
         "id": 226,
         "word": "complimentary (adj)",
-        "meaning": "phí = free"
+        "meaning": "miễn phí = free"
       },
       {
         "id": 227,
-        "word": "brick and cửa",
-        "meaning": "hàng"
+        "word": "brick-and-mortar (adj)",
+        "meaning": "(kinh doanh) có cửa hàng truyền thống, có mặt bằng thực tế"
       },
       {
         "id": 228,
-        "word": "centerpiece (n) của",
-        "meaning": "cái gì đó, phần trung"
+        "word": "centerpiece (n)",
+        "meaning": "vật trang trí trung tâm, phần trung tâm, điểm nhấn chính"
       },
       {
         "id": 229,
@@ -3137,7 +3132,7 @@
       {
         "id": 230,
         "word": "source (v)",
-        "meaning": "cái gì đó từ 1"
+        "meaning": "tìm nguồn cung cấp, lấy nguồn (từ đâu)"
       },
       {
         "id": 231,
@@ -3157,12 +3152,12 @@
       {
         "id": 234,
         "word": "decorative (adj)",
-        "meaning": "lôi cuốn, hấp dẫn"
+        "meaning": "để trang trí, mang tính trang trí"
       },
       {
         "id": 235,
         "word": "old-fashioned (adj)",
-        "meaning": "thời"
+        "meaning": "lỗi thời, cổ hủ, cổ điển"
       },
       {
         "id": 236,
@@ -3172,7 +3167,7 @@
       {
         "id": 237,
         "word": "lightweight (adj)",
-        "meaning": "nhẹ"
+        "meaning": "nhẹ, trọng lượng nhẹ"
       },
       {
         "id": 238,
@@ -3187,12 +3182,12 @@
       {
         "id": 240,
         "word": "minor (adj)",
-        "meaning": "kẹt xe"
+        "meaning": "nhỏ, không đáng kể, thứ yếu"
       },
       {
         "id": 241,
-        "word": "conflit",
-        "meaning": "trùng lịch"
+        "word": "conflict (n, v)",
+        "meaning": "sự xung đột, mâu thuẫn, trùng (lịch); xung đột"
       },
       {
         "id": 242,
@@ -3222,7 +3217,7 @@
       {
         "id": 248,
         "word": "investigate (v)",
-        "meaning": "tra khảo"
+        "meaning": "điều tra, nghiên cứu, thẩm tra"
       },
       {
         "id": 249,
@@ -3256,18 +3251,18 @@
       },
       {
         "id": 255,
-        "word": "resources",
-        "meaning": "nhân sự"
+        "word": "human resources (n)",
+        "meaning": "nguồn nhân lực, phòng nhân sự"
       },
       {
         "id": 256,
-        "word": "cross path",
-        "meaning": "tình cờ gặp"
+        "word": "cross paths",
+        "meaning": "tình cờ gặp nhau"
       },
       {
         "id": 257,
         "word": "ideal (adj)",
-        "meaning": "ý tưởng"
+        "meaning": "lý tưởng, hoàn hảo"
       },
       {
         "id": 258,
@@ -3291,8 +3286,8 @@
       },
       {
         "id": 262,
-        "word": "wise (adj) khôn",
-        "meaning": "ngoan, sáng suốt"
+        "word": "wise (adj)",
+        "meaning": "khôn ngoan, sáng suốt"
       },
       {
         "id": 263,
@@ -3322,7 +3317,7 @@
       {
         "id": 269,
         "word": "mention (v)",
-        "meaning": "cập"
+        "meaning": "đề cập, nhắc đến"
       },
       {
         "id": 270,
@@ -3332,7 +3327,7 @@
       {
         "id": 271,
         "word": "appear (v)",
-        "meaning": "hiện"
+        "meaning": "xuất hiện, dường như"
       },
       {
         "id": 272,
@@ -3366,8 +3361,8 @@
       },
       {
         "id": 278,
-        "word": "apply (n)",
-        "meaning": "áp dụng"
+        "word": "apply (v)",
+        "meaning": "áp dụng, ứng tuyển, nộp đơn"
       },
       {
         "id": 280,
@@ -3417,12 +3412,12 @@
       {
         "id": 290,
         "word": "initial (adj)",
-        "meaning": "cái tiên"
+        "meaning": "ban đầu, đầu tiên"
       },
       {
         "id": 291,
-        "word": "on-site (adj,a",
-        "meaning": "tại chỗ"
+        "word": "on-site (adj, adv)",
+        "meaning": "tại chỗ, tại nơi làm việc"
       },
       {
         "id": 292,
@@ -3446,8 +3441,8 @@
       },
       {
         "id": 296,
-        "word": "procedure (nS)can to open",
-        "meaning": "on Stqudueyer stnreìlnh"
+        "word": "procedure (n)",
+        "meaning": "quy trình, thủ tục"
       },
       {
         "id": 297,
@@ -3487,7 +3482,7 @@
       {
         "id": 304,
         "word": "contractor (n)",
-        "meaning": "nhà"
+        "meaning": "nhà thầu"
       },
       {
         "id": 305,
@@ -3506,7 +3501,7 @@
       },
       {
         "id": 308,
-        "word": "trail version",
+        "word": "trial version (n)",
         "meaning": "phiên bản dùng thử"
       },
       {
@@ -3537,7 +3532,7 @@
       {
         "id": 314,
         "word": "misspell (v)",
-        "meaning": "đọc nhầm"
+        "meaning": "viết sai chính tả, đánh vần sai"
       }
     ]
   },
@@ -3545,8 +3540,8 @@
     "Part 1": [
       {
         "id": 2,
-        "word": "basket (v)",
-        "meaning": "cái giỏ"
+        "word": "basket (n)",
+        "meaning": "cái giỏ, cái rổ"
       },
       {
         "id": 3,
@@ -3611,12 +3606,12 @@
       {
         "id": 15,
         "word": "make a note",
-        "meaning": "ghi nhớ"
+        "meaning": "ghi chú, ghi chép lại"
       },
       {
         "id": 16,
-        "word": "performance",
-        "meaning": "đánh giá hiệu suất"
+        "word": "performance review",
+        "meaning": "đánh giá hiệu suất"
       }
     ],
     "Part 2": [
@@ -3653,7 +3648,7 @@
       {
         "id": 25,
         "word": "commitment (n)",
-        "meaning": "cam"
+        "meaning": "sự cam kết, cam kết"
       },
       {
         "id": 26,
@@ -3668,7 +3663,7 @@
       {
         "id": 28,
         "word": "patio (n)",
-        "meaning": "khoảng không gian"
+        "meaning": "khoảng sân hiên, sân ngoài trời"
       },
       {
         "id": 29,
@@ -3678,7 +3673,7 @@
       {
         "id": 30,
         "word": "permit (v,n)",
-        "meaning": "phép, cho phép"
+        "meaning": "cho phép (v), giấy phép (n)"
       },
       {
         "id": 31,
@@ -3730,7 +3725,7 @@
       {
         "id": 40,
         "word": "alternate (v)",
-        "meaning": "thay"
+        "meaning": "luân phiên, xen kẽ, thay phiên nhau"
       },
       {
         "id": 41,
@@ -3755,7 +3750,7 @@
       {
         "id": 46,
         "word": "go over",
-        "meaning": "trải qua"
+        "meaning": "xem lại, kiểm tra, rà soát"
       },
       {
         "id": 47,
@@ -3775,7 +3770,7 @@
       {
         "id": 50,
         "word": "therapeutic (adj)",
-        "meaning": "bệnh"
+        "meaning": "có tính trị liệu, chữa bệnh"
       },
       {
         "id": 51,
@@ -3805,7 +3800,7 @@
       {
         "id": 56,
         "word": "replace (v)",
-        "meaning": "thay"
+        "meaning": "thay thế"
       },
       {
         "id": 57,
@@ -3855,7 +3850,7 @@
       {
         "id": 66,
         "word": "finalize (v)",
-        "meaning": "chốt"
+        "meaning": "hoàn tất, hoàn thiện, chốt lại"
       },
       {
         "id": 67,
@@ -3890,12 +3885,12 @@
       {
         "id": 73,
         "word": "direct (v)",
-        "meaning": "hướng"
+        "meaning": "hướng dẫn, chỉ đường, chỉ đạo"
       },
       {
         "id": 74,
-        "word": "pavilon (n)",
-        "meaning": "sảnh đường"
+        "word": "pavilion (n)",
+        "meaning": "sảnh đường, gian triển lãm"
       },
       {
         "id": 75,
@@ -3919,8 +3914,8 @@
       },
       {
         "id": 79,
-        "word": "touch",
-        "meaning": "cùng"
+        "word": "finishing touches",
+        "meaning": "khâu hoàn thiện cuối cùng, chi tiết hoàn thiện cuối cùng"
       },
       {
         "id": 80,
@@ -3962,7 +3957,7 @@
       {
         "id": 89,
         "word": "delve into",
-        "meaning": "hoặc thông tin"
+        "meaning": "tìm hiểu sâu, đào sâu (vấn đề hoặc thông tin)"
       },
       {
         "id": 91,
@@ -3997,7 +3992,7 @@
       {
         "id": 97,
         "word": "annual (adj)",
-        "meaning": "every year"
+        "meaning": "hàng năm, thường niên"
       },
       {
         "id": 98,
@@ -4007,27 +4002,27 @@
       {
         "id": 99,
         "word": "livestock (n)",
-        "meaning": "gia súc nuôi ở nông"
+        "meaning": "gia súc (nuôi ở nông trại)"
       },
       {
         "id": 100,
         "word": "up-to-date (adj)",
-        "meaning": "mới hiện đại,"
+        "meaning": "mới, hiện đại, cập nhật"
       },
       {
         "id": 101,
         "word": "cattle (n)",
-        "meaning": "gia súc nuôi lấy thịt"
+        "meaning": "gia súc (bò, trâu)"
       },
       {
         "id": 102,
-        "word": "certificate (v,n)",
-        "meaning": "chứng nhận"
+        "word": "certificate (n)",
+        "meaning": "giấy chứng nhận, chứng chỉ"
       },
       {
         "id": 103,
         "word": "investigate (v)",
-        "meaning": "tra"
+        "meaning": "điều tra, nghiên cứu"
       },
       {
         "id": 104,
@@ -4072,17 +4067,17 @@
       {
         "id": 114,
         "word": "receptionist (n)",
-        "meaning": "quầy lễ tân"
+        "meaning": "nhân viên lễ tân"
       },
       {
         "id": 115,
         "word": "haul (v)",
-        "meaning": "vận chuyển gì đó"
+        "meaning": "kéo, chuyên chở (hàng nặng, cồng kềnh)"
       },
       {
         "id": 116,
         "word": "mulch (n)",
-        "meaning": "trồng)"
+        "meaning": "lớp phủ hữu cơ (bảo vệ cây trồng, giữ ẩm đất)"
       },
       {
         "id": 117,
@@ -4112,17 +4107,17 @@
       {
         "id": 123,
         "word": "involve (v)",
-        "meaning": "bao"
+        "meaning": "bao gồm, liên quan đến"
       },
       {
         "id": 124,
-        "word": "role-play (V0",
-        "meaning": "nhập vai"
+        "word": "role-play (v)",
+        "meaning": "nhập vai, đóng vai"
       },
       {
         "id": 125,
         "word": "executive (n)",
-        "meaning": "chuyên viên cao"
+        "meaning": "chuyên viên cao cấp, người điều hành"
       },
       {
         "id": 126,
@@ -4149,7 +4144,7 @@
       {
         "id": 130,
         "word": "assortment (n)",
-        "meaning": "sự phân loại"
+        "meaning": "sự đa dạng, tập hợp đủ loại (sản phẩm, hàng hóa)"
       },
       {
         "id": 131,
@@ -4228,8 +4223,8 @@
       },
       {
         "id": 145,
-        "word": "foreseeable (adj) có",
-        "meaning": "thể nhìn thấy được"
+        "word": "foreseeable (adj)",
+        "meaning": "có thể thấy trước, có thể dự đoán trước"
       },
       {
         "id": 146,
@@ -4238,8 +4233,8 @@
       },
       {
         "id": 147,
-        "word": "generous (adj) rộng",
-        "meaning": "lượng, hào phóng"
+        "word": "generous (adj)",
+        "meaning": "rộng lượng, hào phóng"
       },
       {
         "id": 148,
@@ -4249,7 +4244,7 @@
       {
         "id": 149,
         "word": "figure (v)",
-        "meaning": "mong đợi = expect"
+        "meaning": "cho rằng, tính toán, nghĩ rằng"
       },
       {
         "id": 150,
@@ -4258,8 +4253,8 @@
       },
       {
         "id": 151,
-        "word": "in the sense",
-        "meaning": "bởi vì = because"
+        "word": "in the sense that",
+        "meaning": "theo nghĩa là, ở chỗ là (bởi vì)"
       },
       {
         "id": 152,
@@ -4289,14 +4284,14 @@
       {
         "id": 157,
         "word": "partial (adj)",
-        "meaning": "không hoàn thiện"
+        "meaning": "một phần, từng phần"
       }
     ],
     "Part 6": [
       {
         "id": 159,
         "word": "trim (v)",
-        "meaning": "tỉa"
+        "meaning": "cắt tỉa, tỉa bớt"
       },
       {
         "id": 160,
@@ -4311,7 +4306,7 @@
       {
         "id": 162,
         "word": "amenity (n)",
-        "meaning": "thứ gì đó tiện nghi"
+        "meaning": "tiện nghi, tiện ích"
       },
       {
         "id": 163,
@@ -4326,7 +4321,7 @@
       {
         "id": 165,
         "word": "beachgoer (n)",
-        "meaning": "beach-patrol"
+        "meaning": "người đi biển, người tắm biển"
       },
       {
         "id": 166,
@@ -4356,7 +4351,7 @@
       {
         "id": 171,
         "word": "impose (v)",
-        "meaning": "buộc"
+        "meaning": "áp đặt, bắt buộc, ban hành (thuế, hình phạt)"
       },
       {
         "id": 172,
@@ -4385,7 +4380,7 @@
       },
       {
         "id": 177,
-        "word": "siliding door (n)",
+        "word": "sliding door (n)",
         "meaning": "cửa trượt"
       },
       {
@@ -4421,7 +4416,7 @@
       {
         "id": 185,
         "word": "refreshment (n)",
-        "meaning": "ăn nhẹ"
+        "meaning": "đồ ăn nhẹ, thức uống giải khát"
       },
       {
         "id": 186,
@@ -4468,7 +4463,7 @@
       {
         "id": 194,
         "word": "occasion (n)",
-        "meaning": "dịp"
+        "meaning": "dịp, cơ hội, sự kiện"
       },
       {
         "id": 196,
@@ -4478,12 +4473,12 @@
       {
         "id": 197,
         "word": "condition (n)",
-        "meaning": "kiện"
+        "meaning": "điều kiện"
       },
       {
         "id": 198,
-        "word": "poor",
-        "meaning": "tầm nhìn kém"
+        "word": "poor visibility",
+        "meaning": "tầm nhìn kém"
       },
       {
         "id": 199,
@@ -4558,7 +4553,7 @@
       {
         "id": 214,
         "word": "alcove (n)",
-        "meaning": "nhỏ trong phòng)"
+        "meaning": "hốc tường, góc thụt (khoảng không gian nhỏ trong phòng)"
       },
       {
         "id": 215,
@@ -4572,8 +4567,8 @@
       },
       {
         "id": 217,
-        "word": "depict (v) hình",
-        "meaning": "ảnh hoặc câu truyện"
+        "word": "depict (v)",
+        "meaning": "miêu tả, mô tả (bằng hình ảnh hoặc câu chuyện)"
       },
       {
         "id": 218,
@@ -4653,7 +4648,7 @@
       {
         "id": 234,
         "word": "whereby (adv)",
-        "meaning": "bằng cách gì"
+        "meaning": "nhờ đó, theo đó, bằng cách đó"
       },
       {
         "id": 235,
@@ -4678,7 +4673,7 @@
       {
         "id": 239,
         "word": "pattern (n)",
-        "meaning": "gương mực"
+        "meaning": "khuôn mẫu, hoa văn, chuẩn mực"
       },
       {
         "id": 240,
@@ -4697,8 +4692,8 @@
       },
       {
         "id": 243,
-        "word": "adopt (n)",
-        "meaning": "tiếp nhận (ý kiến)"
+        "word": "adopt (v)",
+        "meaning": "tiếp nhận (ý kiến), áp dụng, thông qua"
       }
     ]
   },
@@ -4732,7 +4727,7 @@
       {
         "id": 6,
         "word": "cone (n)",
-        "meaning": "vật hình nón (để trên"
+        "meaning": "vật hình nón, cọc tiêu giao thông"
       },
       {
         "id": 7,
@@ -4747,7 +4742,7 @@
       {
         "id": 9,
         "word": "crouch (v)",
-        "meaning": "và hạ người xuống mặt"
+        "meaning": "cúi mình, ngồi xổm, hạ người xuống"
       },
       {
         "id": 10,
@@ -4758,8 +4753,8 @@
     "Part 2": [
       {
         "id": 11,
-        "word": "highly",
-        "meaning": "được đánh giá"
+        "word": "highly regarded",
+        "meaning": "được đánh giá cao"
       },
       {
         "id": 12,
@@ -4768,8 +4763,8 @@
       },
       {
         "id": 13,
-        "word": "aware (v)",
-        "meaning": "nhận"
+        "word": "aware (adj)",
+        "meaning": "nhận thức, nhận biết"
       },
       {
         "id": 14,
@@ -4809,7 +4804,7 @@
       {
         "id": 21,
         "word": "unlikely (adj)",
-        "meaning": "không có thể xảy ra"
+        "meaning": "ít có khả năng xảy ra, khó có thể xảy ra"
       },
       {
         "id": 22,
@@ -4835,18 +4830,18 @@
     "Part 3": [
       {
         "id": 26,
-        "word": "retile (n)",
-        "meaning": "lợp lại (mái"
+        "word": "retile (v)",
+        "meaning": "lát lại gạch, lợp lại (mái)"
       },
       {
         "id": 27,
-        "word": "mark (v)",
+        "word": "mark (n)",
         "meaning": "dấu, vết (bẩn)"
       },
       {
         "id": 28,
         "word": "scratch (n)",
-        "meaning": "xước"
+        "meaning": "vết xước, vết trầy xước"
       },
       {
         "id": 29,
@@ -4860,8 +4855,8 @@
       },
       {
         "id": 31,
-        "word": "recyclable",
-        "meaning": "vật liệu có thể tái"
+        "word": "recyclable (adj)",
+        "meaning": "có thể tái chế (vật liệu tái chế)"
       },
       {
         "id": 32,
@@ -4876,12 +4871,12 @@
       {
         "id": 34,
         "word": "dispose of",
-        "meaning": "thải ra"
+        "meaning": "vứt bỏ, xử lý (rác thải)"
       },
       {
         "id": 35,
         "word": "properly (adv)",
-        "meaning": "lý"
+        "meaning": "đúng cách, hợp lý"
       },
       {
         "id": 36,
@@ -4915,13 +4910,13 @@
       },
       {
         "id": 42,
-        "word": "stratergy (n)",
-        "meaning": "lược"
+        "word": "strategy (n)",
+        "meaning": "chiến lược"
       },
       {
         "id": 43,
         "word": "regional (adj)",
-        "meaning": "(thuộc) khu"
+        "meaning": "(thuộc) khu vực"
       },
       {
         "id": 44,
@@ -4961,7 +4956,7 @@
       {
         "id": 51,
         "word": "cause (v)",
-        "meaning": "lý do làm cho"
+        "meaning": "gây ra, làm cho"
       },
       {
         "id": 52,
@@ -4971,7 +4966,7 @@
       {
         "id": 53,
         "word": "qualified (adj)",
-        "meaning": "có điều kiện"
+        "meaning": "đủ điều kiện, đủ tiêu chuẩn, có đủ năng lực"
       },
       {
         "id": 54,
@@ -4985,7 +4980,7 @@
       },
       {
         "id": 56,
-        "word": "of",
+        "word": "in the event of",
         "meaning": "trong trường hợp"
       },
       {
@@ -4995,13 +4990,13 @@
       },
       {
         "id": 58,
-        "word": "over the",
-        "meaning": "trong quá trình"
+        "word": "over the course of",
+        "meaning": "trong quá trình, trong suốt"
       },
       {
         "id": 59,
         "word": "financial (adj)",
-        "meaning": "(thuộc) kinh tế"
+        "meaning": "(thuộc) tài chính"
       },
       {
         "id": 60,
@@ -5010,13 +5005,13 @@
       },
       {
         "id": 61,
-        "word": "approve (v) phê",
-        "meaning": "duyệt, chấp thuật"
+        "word": "approve (v)",
+        "meaning": "phê duyệt, chấp thuận"
       },
       {
         "id": 62,
-        "word": "give one's the",
-        "meaning": "sự ý, sự tán"
+        "word": "give the OK",
+        "meaning": "sự đồng ý, sự tán thành"
       },
       {
         "id": 63,
@@ -5025,8 +5020,8 @@
       },
       {
         "id": 64,
-        "word": "plate làm",
-        "meaning": "nhẹ bớt công việc"
+        "word": "take something off one's plate",
+        "meaning": "làm nhẹ bớt công việc"
       },
       {
         "id": 65,
@@ -5060,8 +5055,8 @@
       },
       {
         "id": 71,
-        "word": "glaze (n) nước",
-        "meaning": "men (đồ gốm, sứ)"
+        "word": "glaze (n)",
+        "meaning": "nước men (đồ gốm, sứ)"
       },
       {
         "id": 73,
@@ -5076,12 +5071,12 @@
       {
         "id": 75,
         "word": "registrant (n)",
-        "meaning": "nhân viên đăng ký"
+        "meaning": "người đăng ký, người ghi danh"
       },
       {
         "id": 76,
         "word": "rowing machine",
-        "meaning": "máy tập chèo"
+        "meaning": "máy tập chèo thuyền"
       }
     ],
     "Part 4": [
@@ -5092,7 +5087,7 @@
       },
       {
         "id": 78,
-        "word": "acient (adj)",
+        "word": "ancient (adj)",
         "meaning": "cổ, xưa"
       },
       {
@@ -5107,8 +5102,8 @@
       },
       {
         "id": 81,
-        "word": "enthusiast (adj)",
-        "meaning": "nhiệt tình"
+        "word": "enthusiast (n)",
+        "meaning": "người đam mê, người nhiệt tình"
       },
       {
         "id": 82,
@@ -5118,12 +5113,12 @@
       {
         "id": 83,
         "word": "accelerate (v)",
-        "meaning": "tăng"
+        "meaning": "tăng tốc, gia tốc"
       },
       {
         "id": 84,
-        "word": "towing",
-        "meaning": "sức kéo"
+        "word": "towing capacity",
+        "meaning": "sức kéo, khả năng kéo"
       },
       {
         "id": 85,
@@ -5153,7 +5148,7 @@
       {
         "id": 90,
         "word": "infrared (adj)",
-        "meaning": "tia cực tím"
+        "meaning": "(thuộc) hồng ngoại"
       },
       {
         "id": 91,
@@ -5218,7 +5213,7 @@
       {
         "id": 104,
         "word": "priority (n)",
-        "meaning": "sư ưu tiên"
+        "meaning": "sự ưu tiên"
       },
       {
         "id": 105,
@@ -5233,7 +5228,7 @@
       {
         "id": 107,
         "word": "on duty",
-        "meaning": "đang trong thời gian"
+        "meaning": "đang làm nhiệm vụ, đang trong ca trực"
       },
       {
         "id": 108,
@@ -5243,12 +5238,12 @@
       {
         "id": 109,
         "word": "moist (adj)",
-        "meaning": "ẩm"
+        "meaning": "ẩm ướt, có độ ẩm"
       },
       {
         "id": 110,
         "word": "motivate (v)",
-        "meaning": "làm cho ai có động"
+        "meaning": "thúc đẩy, tạo động lực cho ai"
       },
       {
         "id": 111,
@@ -5258,7 +5253,7 @@
       {
         "id": 112,
         "word": "promote (v)",
-        "meaning": "thúc đẩy, quảng"
+        "meaning": "thúc đẩy, quảng bá"
       },
       {
         "id": 113,
@@ -5268,7 +5263,7 @@
       {
         "id": 114,
         "word": "optimization (n)",
-        "meaning": "sự ưu hóa"
+        "meaning": "sự tối ưu hóa"
       },
       {
         "id": 115,
@@ -5300,7 +5295,7 @@
       {
         "id": 120,
         "word": "abundant (adj)",
-        "meaning": "dư, thừa"
+        "meaning": "dồi dào, phong phú, nhiều"
       },
       {
         "id": 121,
@@ -5340,7 +5335,7 @@
       {
         "id": 129,
         "word": "enforce (v)",
-        "meaning": "ban hành"
+        "meaning": "thực thi, thi hành, bắt buộc tuân theo"
       },
       {
         "id": 130,
@@ -5355,7 +5350,7 @@
       {
         "id": 132,
         "word": "amendment (n)",
-        "meaning": "hay thay đổi 1 tài liệu"
+        "meaning": "sự sửa đổi, bổ sung (tài liệu, luật)"
       },
       {
         "id": 133,
@@ -5375,12 +5370,12 @@
       {
         "id": 136,
         "word": "sizeable (adj)",
-        "meaning": "khổng lồ"
+        "meaning": "khá lớn, đáng kể"
       },
       {
         "id": 137,
         "word": "take over",
-        "meaning": "bắt đầu làm gì đó"
+        "meaning": "tiếp quản, đảm nhận"
       },
       {
         "id": 138,
@@ -5395,7 +5390,7 @@
       {
         "id": 140,
         "word": "theoretical (adj)",
-        "meaning": "lý"
+        "meaning": "(thuộc) lý thuyết, mang tính lý thuyết"
       },
       {
         "id": 141,
@@ -5411,8 +5406,8 @@
       },
       {
         "id": 143,
-        "word": "professionalism (n) tinh",
-        "meaning": "thần nghề nghiệp"
+        "word": "professionalism (n)",
+        "meaning": "tinh thần nghề nghiệp, sự chuyên nghiệp"
       },
       {
         "id": 144,
@@ -5442,7 +5437,7 @@
       {
         "id": 149,
         "word": "commitment (n)",
-        "meaning": "sự cam kết, sự ràng"
+        "meaning": "sự cam kết, sự ràng buộc"
       },
       {
         "id": 150,
@@ -5452,17 +5447,17 @@
       {
         "id": 151,
         "word": "habit (n)",
-        "meaning": "sở thích"
+        "meaning": "thói quen"
       },
       {
         "id": 152,
-        "word": "internal (n)",
+        "word": "internal (adj)",
         "meaning": "nội bộ"
       },
       {
         "id": 153,
         "word": "deduct (v)",
-        "meaning": "trừ"
+        "meaning": "khấu trừ, trừ đi"
       }
     ],
     "Part 7": [
@@ -5493,8 +5488,8 @@
       },
       {
         "id": 159,
-        "word": "heads-up",
-        "meaning": "có thời gian chuẩn bị"
+        "word": "heads-up (n)",
+        "meaning": "lời báo trước, thông báo trước"
       },
       {
         "id": 160,
@@ -5544,7 +5539,7 @@
       {
         "id": 169,
         "word": "paramount (adj)",
-        "meaning": "bất cứ thứ gì"
+        "meaning": "tối quan trọng, quan trọng nhất"
       },
       {
         "id": 170,
@@ -5558,13 +5553,13 @@
       },
       {
         "id": 172,
-        "word": "fraud (v,n)",
-        "meaning": "lừa đảo"
+        "word": "fraud (n)",
+        "meaning": "sự lừa đảo, sự gian lận"
       },
       {
         "id": 173,
-        "word": "outstanding số",
-        "meaning": "dư chưa thanh toán"
+        "word": "outstanding balance",
+        "meaning": "số dư chưa thanh toán"
       },
       {
         "id": 174,
@@ -5599,7 +5594,7 @@
       {
         "id": 180,
         "word": "bond (n)",
-        "meaning": "trái"
+        "meaning": "trái phiếu"
       },
       {
         "id": 181,
@@ -5619,7 +5614,7 @@
       {
         "id": 184,
         "word": "imposing (adj)",
-        "meaning": "vĩ"
+        "meaning": "hùng vĩ, ấn tượng, đồ sộ"
       },
       {
         "id": 185,
@@ -5634,12 +5629,12 @@
       {
         "id": 187,
         "word": "stand (n)",
-        "meaning": "bán hàng"
+        "meaning": "gian hàng, quầy bán hàng"
       },
       {
         "id": 188,
         "word": "decaf (adj)",
-        "meaning": "không có"
+        "meaning": "không chứa caffeine, đã khử caffeine"
       },
       {
         "id": 189,
@@ -5649,7 +5644,7 @@
       {
         "id": 190,
         "word": "lid (n)",
-        "meaning": "(ly)"
+        "meaning": "nắp (ly, cốc, hộp)"
       },
       {
         "id": 191,
@@ -5689,12 +5684,12 @@
       {
         "id": 198,
         "word": "compile (v)",
-        "meaning": "tập hợp thông"
+        "meaning": "tập hợp (thông tin), biên soạn"
       },
       {
         "id": 199,
         "word": "adequate (adj)",
-        "meaning": "đủ"
+        "meaning": "đầy đủ, thỏa đáng"
       },
       {
         "id": 200,
@@ -5718,8 +5713,8 @@
       },
       {
         "id": 204,
-        "word": "policy",
-        "meaning": "trả"
+        "word": "return policy",
+        "meaning": "chính sách trả hàng, hoàn tiền"
       }
     ]
   },
@@ -5747,8 +5742,8 @@
       },
       {
         "id": 5,
-        "word": "cloumn (n)",
-        "meaning": "cột"
+        "word": "column (n)",
+        "meaning": "cột, trụ, mục báo"
       },
       {
         "id": 6,
@@ -5758,12 +5753,12 @@
       {
         "id": 7,
         "word": "counter (n)",
-        "meaning": "cái"
+        "meaning": "quầy, quầy tính tiền"
       },
       {
         "id": 8,
-        "word": "fund-raiser",
-        "meaning": "gây quỹ"
+        "word": "fund-raiser (n)",
+        "meaning": "buổi gây quỹ, sự kiện gây quỹ"
       },
       {
         "id": 10,
@@ -5782,13 +5777,13 @@
       },
       {
         "id": 13,
-        "word": "match (n)",
-        "meaning": "hợp"
+        "word": "match (v)",
+        "meaning": "hợp, phù hợp"
       },
       {
         "id": 14,
         "word": "porch (n)",
-        "meaning": "cổng vòm"
+        "meaning": "hiên nhà, mái hiên"
       },
       {
         "id": 15,
@@ -5849,8 +5844,8 @@
       },
       {
         "id": 26,
-        "word": "hesitant (v)",
-        "meaning": "ngập ngừng"
+        "word": "hesitant (adj)",
+        "meaning": "ngập ngừng, do dự"
       },
       {
         "id": 27,
@@ -5869,7 +5864,7 @@
       },
       {
         "id": 30,
-        "word": "gorcery store",
+        "word": "grocery store",
         "meaning": "cửa hàng tạp hóa"
       },
       {
@@ -5927,11 +5922,11 @@
       {
         "id": 42,
         "word": "supervisor (n)",
-        "meaning": "giám sát"
+        "meaning": "người giám sát"
       },
       {
         "id": 43,
-        "word": "announce (n)",
+        "word": "announce (v)",
         "meaning": "thông báo"
       },
       {
@@ -5941,8 +5936,8 @@
       },
       {
         "id": 45,
-        "word": "at the same",
-        "meaning": "đồng thời"
+        "word": "at the same time",
+        "meaning": "đồng thời, cùng lúc"
       },
       {
         "id": 46,
@@ -5952,7 +5947,7 @@
       {
         "id": 47,
         "word": "concentrate on",
-        "meaning": "đó"
+        "meaning": "tập trung vào"
       },
       {
         "id": 48,
@@ -5971,8 +5966,8 @@
       },
       {
         "id": 51,
-        "word": "apprearance (n)",
-        "meaning": "sự xuất hiện"
+        "word": "appearance (n)",
+        "meaning": "sự xuất hiện"
       },
       {
         "id": 52,
@@ -5981,8 +5976,8 @@
       },
       {
         "id": 53,
-        "word": "leader",
-        "meaning": "bộ phận lãnh đạo"
+        "word": "leader (n)",
+        "meaning": "người lãnh đạo, người dẫn đầu"
       },
       {
         "id": 54,
@@ -6026,13 +6021,13 @@
       },
       {
         "id": 62,
-        "word": "wholesale (adj,",
-        "meaning": "bán sỉ"
+        "word": "wholesale (adj, adv)",
+        "meaning": "bán sỉ, bán buôn"
       },
       {
         "id": 63,
         "word": "incomplete (adj)",
-        "meaning": "chưa hoàn thiện, bị"
+        "meaning": "chưa hoàn thiện, chưa đầy đủ"
       },
       {
         "id": 64,
@@ -6042,7 +6037,7 @@
       {
         "id": 65,
         "word": "confused (adj)",
-        "meaning": "bị"
+        "meaning": "bối rối, lúng túng"
       },
       {
         "id": 66,
@@ -6056,8 +6051,8 @@
       },
       {
         "id": 68,
-        "word": "window (of định",
-        "meaning": "yêu cầu phải hoàn"
+        "word": "window of time",
+        "meaning": "khoảng thời gian quy định, yêu cầu phải hoàn thành"
       },
       {
         "id": 69,
@@ -6066,8 +6061,8 @@
       },
       {
         "id": 70,
-        "word": "with",
-        "meaning": "mãn với"
+        "word": "satisfied with",
+        "meaning": "thỏa mãn với, hài lòng với"
       },
       {
         "id": 71,
@@ -6081,8 +6076,8 @@
       },
       {
         "id": 73,
-        "word": "a compromise",
-        "meaning": "hiệp"
+        "word": "reach a compromise",
+        "meaning": "đạt được thỏa hiệp, thỏa hiệp"
       },
       {
         "id": 74,
@@ -6107,17 +6102,17 @@
       {
         "id": 78,
         "word": "negotiable (adj)",
-        "meaning": "được"
+        "meaning": "có thể thương lượng được"
       },
       {
         "id": 79,
-        "word": "basis",
-        "meaning": "luân phiên"
+        "word": "on a rotating basis",
+        "meaning": "luân phiên, theo hình thức luân phiên"
       },
       {
         "id": 80,
         "word": "steam room",
-        "meaning": "opnh Sòtundege rxsônenlg hơi"
+        "meaning": "phòng xông hơi"
       }
     ],
     "Part 4": [
@@ -6164,7 +6159,7 @@
       {
         "id": 89,
         "word": "vision (n)",
-        "meaning": "nhìn"
+        "meaning": "tầm nhìn, thị lực"
       },
       {
         "id": 90,
@@ -6204,7 +6199,7 @@
       {
         "id": 97,
         "word": "labor shortage",
-        "meaning": "thiếu lực lượng lao"
+        "meaning": "thiếu lực lượng lao động"
       },
       {
         "id": 98,
@@ -6228,7 +6223,7 @@
       },
       {
         "id": 102,
-        "word": "retail adv)",
+        "word": "retail (adv)",
         "meaning": "bán lẻ"
       },
       {
@@ -6239,7 +6234,7 @@
       {
         "id": 104,
         "word": "mail out",
-        "meaning": "gửi thông tin, thông"
+        "meaning": "gửi thông tin, thông báo qua thư"
       },
       {
         "id": 105,
@@ -6248,8 +6243,8 @@
       },
       {
         "id": 105,
-        "word": "energize (v) hăng",
-        "meaning": "hái, có năng lượng"
+        "word": "energize (v)",
+        "meaning": "hăng hái, có năng lượng, tiếp thêm sinh lực"
       },
       {
         "id": 107,
@@ -6271,7 +6266,7 @@
       {
         "id": 110,
         "word": "tackle (v)",
-        "meaning": "giải cái"
+        "meaning": "giải quyết, xử lý (vấn đề)"
       },
       {
         "id": 111,
@@ -6316,7 +6311,7 @@
       {
         "id": 119,
         "word": "prevalence (n)",
-        "meaning": "tỷ lệ"
+        "meaning": "sự phổ biến, sự thịnh hành"
       },
       {
         "id": 120,
@@ -6326,7 +6321,7 @@
       {
         "id": 121,
         "word": "inflict (v)",
-        "meaning": "thuế...)"
+        "meaning": "gây ra (tổn hại, đau đớn), bắt phải chịu"
       }
     ],
     "Part 6": [
@@ -6368,7 +6363,7 @@
       {
         "id": 129,
         "word": "carpooling (n)",
-        "meaning": "đi chung xe với người"
+        "meaning": "đi chung xe với người khác, việc đi chung xe"
       },
       {
         "id": 130,
@@ -6379,8 +6374,8 @@
     "Part 7": [
       {
         "id": 131,
-        "word": "tune-up chuẩn",
-        "meaning": "bị cho buổi biểu"
+        "word": "tune-up (n)",
+        "meaning": "chuẩn bị cho buổi biểu diễn, sự bảo dưỡng/hiệu chỉnh"
       },
       {
         "id": 132,
@@ -6400,7 +6395,7 @@
       {
         "id": 136,
         "word": "virtual (adj)",
-        "meaning": "thực tế"
+        "meaning": "ảo, trực tuyến"
       },
       {
         "id": 137,
@@ -6444,8 +6439,8 @@
       },
       {
         "id": 145,
-        "word": "patio (n) không",
-        "meaning": "gian ngoài"
+        "word": "patio (n)",
+        "meaning": "khoảng sân ngoài trời, sân hiên"
       },
       {
         "id": 146,
@@ -6485,7 +6480,7 @@
       {
         "id": 153,
         "word": "going-away (n)",
-        "meaning": "tiệc chia tauy"
+        "meaning": "tiệc chia tay"
       },
       {
         "id": 154,
@@ -6510,7 +6505,7 @@
       {
         "id": 158,
         "word": "flag (v)",
-        "meaning": "cờ"
+        "meaning": "đánh dấu, gắn cờ báo hiệu, cảnh báo"
       },
       {
         "id": 159,
@@ -6544,13 +6539,13 @@
       },
       {
         "id": 165,
-        "word": "minimal (adScj)an to open",
-        "meaning": "on Stutdôéie trshneiểlu"
+        "word": "minimal (adj)",
+        "meaning": "tối thiểu, rất nhỏ"
       },
       {
         "id": 166,
         "word": "upkeep (n)",
-        "meaning": "chi phí bảo"
+        "meaning": "chi phí bảo dưỡng, sự bảo trì"
       },
       {
         "id": 167,
@@ -6560,7 +6555,7 @@
       {
         "id": 168,
         "word": "refund (v)",
-        "meaning": "hoàn"
+        "meaning": "hoàn tiền, hoàn lại"
       },
       {
         "id": 169,
@@ -6569,8 +6564,8 @@
       },
       {
         "id": 170,
-        "word": "monarch (n) gia",
-        "meaning": "(vua hoặc nữ hoàng)"
+        "word": "monarch (n)",
+        "meaning": "quốc vương, vua (vua hoặc nữ hoàng)"
       },
       {
         "id": 171,
@@ -6615,7 +6610,7 @@
       {
         "id": 179,
         "word": "inclement (adj)",
-        "meaning": "(thời"
+        "meaning": "(thời tiết) khắc nghiệt"
       },
       {
         "id": 180,
@@ -6644,22 +6639,22 @@
       {
         "id": 2,
         "word": "wipe off",
-        "meaning": "lau"
+        "meaning": "lau sạch, lau đi"
       },
       {
         "id": 3,
         "word": "rinse (v)",
-        "meaning": "rửa"
+        "meaning": "rửa sạch, súc rửa"
       },
       {
         "id": 4,
         "word": "faucet (n)",
-        "meaning": "bồn rửa mặt"
+        "meaning": "vòi nước"
       },
       {
         "id": 5,
         "word": "tie (v)",
-        "meaning": "cột"
+        "meaning": "cột, buộc, thắt"
       },
       {
         "id": 6,
@@ -6674,7 +6669,7 @@
       {
         "id": 8,
         "word": "jar (n)",
-        "meaning": "lọ"
+        "meaning": "lọ, hũ, bình thủy tinh"
       },
       {
         "id": 9,
@@ -6740,7 +6735,7 @@
       },
       {
         "id": 21,
-        "word": "building",
+        "word": "building inspector",
         "meaning": "thanh tra tòa nhà"
       },
       {
@@ -6751,7 +6746,7 @@
       {
         "id": 24,
         "word": "alter (v)",
-        "meaning": "thay thế"
+        "meaning": "thay đổi, chỉnh sửa"
       },
       {
         "id": 25,
@@ -6770,8 +6765,8 @@
       },
       {
         "id": 28,
-        "word": "hardware (nS)can to open",
-        "meaning": "on đStôùd egeiras ndelụng"
+        "word": "hardware (n)",
+        "meaning": "đồ gia dụng"
       }
     ],
     "Part 3": [
@@ -6783,7 +6778,7 @@
       {
         "id": 30,
         "word": "make a deposit",
-        "meaning": "hàng"
+        "meaning": "gửi tiền (vào ngân hàng), đặt cọc"
       },
       {
         "id": 31,
@@ -6802,13 +6797,13 @@
       },
       {
         "id": 34,
-        "word": "schedule",
+        "word": "scheduling conflict",
         "meaning": "trùng lịch"
       },
       {
         "id": 35,
         "word": "fabric (n)",
-        "meaning": "vải"
+        "meaning": "vải, chất liệu vải"
       },
       {
         "id": 36,
@@ -6862,13 +6857,13 @@
       },
       {
         "id": 46,
-        "word": "appraisal (nS)can to open",
-        "meaning": "on Sstựud eđeịrnsnhel giá"
+        "word": "appraisal (n)",
+        "meaning": "sự định giá"
       },
       {
         "id": 47,
         "word": "bid (n)",
-        "meaning": "mức cược"
+        "meaning": "giá đấu thầu, mức giá trả"
       },
       {
         "id": 48,
@@ -6898,7 +6893,7 @@
       {
         "id": 53,
         "word": "remind (v)",
-        "meaning": "nhở"
+        "meaning": "nhắc nhở"
       },
       {
         "id": 54,
@@ -6928,7 +6923,7 @@
       {
         "id": 59,
         "word": "marina (n)",
-        "meaning": "ao cột tày, ụ tàu nhỏ"
+        "meaning": "ao cột tàu, ụ tàu nhỏ"
       },
       {
         "id": 60,
@@ -6953,7 +6948,7 @@
       {
         "id": 64,
         "word": "reimburse (v)",
-        "meaning": "thường"
+        "meaning": "bồi thường, hoàn trả"
       },
       {
         "id": 65,
@@ -6973,7 +6968,7 @@
       {
         "id": 68,
         "word": "publicity (n)",
-        "meaning": "cáo"
+        "meaning": "quảng cáo, sự công khai"
       },
       {
         "id": 69,
@@ -7008,7 +7003,7 @@
       {
         "id": 75,
         "word": "try out",
-        "meaning": "thử"
+        "meaning": "thử nghiệm, dùng thử"
       },
       {
         "id": 76,
@@ -7065,7 +7060,7 @@
       {
         "id": 86,
         "word": "protocol (n)",
-        "meaning": "quy trình (theo ngữ"
+        "meaning": "quy trình, nghi thức"
       },
       {
         "id": 87,
@@ -7075,7 +7070,7 @@
       {
         "id": 88,
         "word": "dedicate (v)",
-        "meaning": "chỉ định, chỉ ra"
+        "meaning": "cống hiến, tận tâm"
       },
       {
         "id": 89,
@@ -7094,8 +7089,8 @@
       },
       {
         "id": 92,
-        "word": "time",
-        "meaning": "công việc"
+        "word": "turnaround time",
+        "meaning": "thời gian hoàn thành công việc"
       },
       {
         "id": 93,
@@ -7104,13 +7099,13 @@
       },
       {
         "id": 94,
-        "word": "woodland (nS)can to open",
-        "meaning": "on Svtuùdenegrs nreừlng"
+        "word": "woodland (n)",
+        "meaning": "vùng rừng"
       },
       {
         "id": 95,
         "word": "landowner (n)",
-        "meaning": "người sở hữu"
+        "meaning": "chủ đất, người sở hữu đất"
       },
       {
         "id": 96,
@@ -7159,13 +7154,13 @@
       },
       {
         "id": 106,
-        "word": "leisure",
-        "meaning": "không vội"
+        "word": "at your leisure",
+        "meaning": "không vội, khi rảnh rỗi"
       },
       {
         "id": 107,
-        "word": "of",
-        "meaning": "các loại"
+        "word": "an assortment of",
+        "meaning": "các loại, đủ loại"
       },
       {
         "id": 108,
@@ -7207,7 +7202,7 @@
       {
         "id": 115,
         "word": "prime (adj)",
-        "meaning": "nhất"
+        "meaning": "hàng đầu, quan trọng nhất, tốt nhất"
       },
       {
         "id": 116,
@@ -7222,12 +7217,12 @@
       {
         "id": 118,
         "word": "critic (n)",
-        "meaning": "sự chỉ trích"
+        "meaning": "nhà phê bình, người chỉ trích"
       },
       {
         "id": 120,
         "word": "embrace (v)",
-        "meaning": "nhận"
+        "meaning": "đón nhận, chấp nhận"
       },
       {
         "id": 121,
@@ -7261,8 +7256,8 @@
       },
       {
         "id": 127,
-        "word": "interchangeable (adScj)an to opceón",
-        "meaning": "otnh Sểtu tdheearsyn eclho nhau"
+        "word": "interchangeable (adj)",
+        "meaning": "có thể thay thế cho nhau"
       }
     ],
     "Part 6": [
@@ -7283,8 +7278,8 @@
       },
       {
         "id": 131,
-        "word": "inflate (v) thổi",
-        "meaning": "phồng, bơm phồng"
+        "word": "inflate (v)",
+        "meaning": "thổi phồng, bơm phồng"
       },
       {
         "id": 132,
@@ -7294,12 +7289,12 @@
       {
         "id": 133,
         "word": "prompt (v)",
-        "meaning": "nhắc"
+        "meaning": "nhắc nhở, thúc đẩy"
       },
       {
         "id": 134,
         "word": "interrupt (v)",
-        "meaning": "lời, gián đoạn"
+        "meaning": "ngắt lời, làm gián đoạn"
       }
     ],
     "Part 7": [
@@ -7331,7 +7326,7 @@
       {
         "id": 140,
         "word": "elite (n)",
-        "meaning": "nhất trong xã hội"
+        "meaning": "tầng lớp ưu tú nhất trong xã hội"
       },
       {
         "id": 141,
@@ -7351,12 +7346,12 @@
       {
         "id": 144,
         "word": "incident (n)",
-        "meaning": "mong muốn hoặc bất"
+        "meaning": "sự cố, biến cố (không mong muốn hoặc bất thường)"
       },
       {
         "id": 145,
         "word": "forum (n)",
-        "meaning": "đàn"
+        "meaning": "diễn đàn"
       },
       {
         "id": 146,
@@ -7421,12 +7416,12 @@
       {
         "id": 158,
         "word": "apparel (n)",
-        "meaning": "áo"
+        "meaning": "quần áo, trang phục"
       },
       {
         "id": 159,
         "word": "adorn (v)",
-        "meaning": "trang trí, trang"
+        "meaning": "trang trí, trang hoàng"
       },
       {
         "id": 160,
@@ -7470,8 +7465,8 @@
       },
       {
         "id": 169,
-        "word": "modify (vS)can to open",
-        "meaning": "on Sđtuidêèuer scnhelỉnh"
+        "word": "modify (v)",
+        "meaning": "điều chỉnh, sửa đổi"
       },
       {
         "id": 170,
@@ -7506,7 +7501,7 @@
       {
         "id": 176,
         "word": "conclude (v)",
-        "meaning": "luận"
+        "meaning": "kết luận"
       },
       {
         "id": 177,
@@ -7526,7 +7521,7 @@
       {
         "id": 180,
         "word": "eager to",
-        "meaning": "cố gắng"
+        "meaning": "háo hức, tha thiết"
       },
       {
         "id": 181,
@@ -7536,7 +7531,7 @@
       {
         "id": 182,
         "word": "sensational (adj)",
-        "meaning": "tích cực)"
+        "meaning": "tuyệt vời, gây chấn động (nghĩa tích cực)"
       },
       {
         "id": 183,
@@ -7610,17 +7605,17 @@
       {
         "id": 12,
         "word": "directory (n)",
-        "meaning": "thư mục web"
+        "meaning": "danh bạ, danh mục"
       },
       {
         "id": 13,
-        "word": "headquarter (n)",
+        "word": "headquarters (n)",
         "meaning": "trụ sở chính"
       },
       {
         "id": 14,
         "word": "approach (v)",
-        "meaning": "cận"
+        "meaning": "tiếp cận, đến gần"
       }
     ],
     "Part 3": [
@@ -7637,7 +7632,7 @@
       {
         "id": 17,
         "word": "misfile (v)",
-        "meaning": "lưu trữ hoặc ghi lại"
+        "meaning": "lưu trữ sai chỗ, để nhầm hồ sơ"
       },
       {
         "id": 18,
@@ -7687,7 +7682,7 @@
       {
         "id": 27,
         "word": "inquire (v)",
-        "meaning": "hỏi"
+        "meaning": "hỏi thăm, yêu cầu thông tin"
       },
       {
         "id": 28,
@@ -7707,7 +7702,7 @@
       {
         "id": 31,
         "word": "drain (v)",
-        "meaning": "vắt khô"
+        "meaning": "thoát nước, xả nước, rút nước"
       },
       {
         "id": 32,
@@ -7722,7 +7717,7 @@
       {
         "id": 34,
         "word": "inspector (n)",
-        "meaning": "sự thanh tra, kiểm"
+        "meaning": "thanh tra viên, người kiểm tra"
       },
       {
         "id": 35,
@@ -7742,7 +7737,7 @@
       {
         "id": 38,
         "word": "flooring (n)",
-        "meaning": "đó được làm từ"
+        "meaning": "vật liệu lót sàn, sàn nhà"
       },
       {
         "id": 39,
@@ -7762,7 +7757,7 @@
       {
         "id": 42,
         "word": "lakeside (n)",
-        "meaning": "bờ"
+        "meaning": "bờ hồ"
       },
       {
         "id": 43,
@@ -7787,7 +7782,7 @@
       {
         "id": 47,
         "word": "wrap (v)",
-        "meaning": "gói"
+        "meaning": "gói lại, bao bọc"
       },
       {
         "id": 48,
@@ -7803,8 +7798,8 @@
       },
       {
         "id": 50,
-        "word": "anticipation of",
-        "meaning": "đó xảy ra"
+        "word": "in anticipation of",
+        "meaning": "để chuẩn bị trước cho, đón trước"
       },
       {
         "id": 51,
@@ -7844,7 +7839,7 @@
       {
         "id": 58,
         "word": "nonslip (adj)",
-        "meaning": "chống"
+        "meaning": "chống trượt, chống trơn trượt"
       },
       {
         "id": 59,
@@ -7869,7 +7864,7 @@
       {
         "id": 63,
         "word": "proximity (n)",
-        "meaning": "gần"
+        "meaning": "sự gần gũi, khoảng cách gần"
       },
       {
         "id": 64,
@@ -7883,8 +7878,8 @@
       },
       {
         "id": 66,
-        "word": "mainland (nS)can to open",
-        "meaning": "on Stuđdeâétrs lnieêl̀n"
+        "word": "mainland (n)",
+        "meaning": "đất liền"
       },
       {
         "id": 67,
@@ -7894,11 +7889,11 @@
       {
         "id": 68,
         "word": "ferry (n)",
-        "meaning": "bến phà"
+        "meaning": "phà, tàu phà"
       },
       {
         "id": 69,
-        "word": "means (plura",
+        "word": "means (plural n)",
         "meaning": "phương tiện"
       },
       {
@@ -7918,8 +7913,8 @@
       },
       {
         "id": 73,
-        "word": "acknowledge (v) thừa",
-        "meaning": "nhận, công nhận"
+        "word": "acknowledge (v)",
+        "meaning": "thừa nhận, công nhận"
       },
       {
         "id": 74,
@@ -7928,8 +7923,8 @@
       },
       {
         "id": 75,
-        "word": "bookeeping (n)",
-        "meaning": "ghi sổ"
+        "word": "bookkeeping (n)",
+        "meaning": "ghi sổ kế toán"
       },
       {
         "id": 76,
@@ -7958,8 +7953,8 @@
       },
       {
         "id": 81,
-        "word": "vending máy",
-        "meaning": "bán hàng tự động"
+        "word": "vending machine (n)",
+        "meaning": "máy bán hàng tự động"
       }
     ],
     "Part 5": [
@@ -7986,12 +7981,12 @@
       {
         "id": 86,
         "word": "salvage (v)",
-        "meaning": "thanh lý"
+        "meaning": "cứu vãn, cứu hộ, tận thu"
       },
       {
         "id": 87,
-        "word": "vehicle",
-        "meaning": "đoàn xe"
+        "word": "vehicle fleet",
+        "meaning": "đoàn xe, đội xe"
       },
       {
         "id": 88,
@@ -8035,8 +8030,8 @@
       },
       {
         "id": 96,
-        "word": "reluctant (v)",
-        "meaning": "miễn cưỡng"
+        "word": "reluctant (adj)",
+        "meaning": "miễn cưỡng"
       }
     ],
     "Part 6": [
@@ -8052,8 +8047,8 @@
       },
       {
         "id": 99,
-        "word": "countless (adj) nhiều,",
-        "meaning": "không đếm được"
+        "word": "countless (adj)",
+        "meaning": "nhiều, không đếm được"
       },
       {
         "id": 100,
@@ -8064,8 +8059,8 @@
     "Part 7": [
       {
         "id": 101,
-        "word": "oral",
-        "meaning": "vệ sinh răng"
+        "word": "oral hygiene",
+        "meaning": "vệ sinh răng miệng"
       },
       {
         "id": 102,
@@ -8075,7 +8070,7 @@
       {
         "id": 103,
         "word": "supplier (n)",
-        "meaning": "nhà cung"
+        "meaning": "nhà cung cấp"
       },
       {
         "id": 104,
@@ -8099,7 +8094,7 @@
       },
       {
         "id": 108,
-        "word": "(v)",
+        "word": "rely on (v)",
         "meaning": "dựa vào"
       },
       {
@@ -8115,12 +8110,12 @@
       {
         "id": 112,
         "word": "issue (v)",
-        "meaning": "sản xuất"
+        "meaning": "phát hành, ban hành, cấp"
       },
       {
         "id": 113,
         "word": "circulate (v)",
-        "meaning": "lưu hành, bá"
+        "meaning": "lưu hành, truyền bá"
       },
       {
         "id": 114,
@@ -8144,8 +8139,8 @@
       },
       {
         "id": 118,
-        "word": "appropriate (adScj)an to open",
-        "meaning": "on Stupdheeùrs hneợlp"
+        "word": "appropriate (adj)",
+        "meaning": "phù hợp"
       },
       {
         "id": 119,
@@ -8180,12 +8175,12 @@
       {
         "id": 125,
         "word": "board (n)",
-        "meaning": "hội"
+        "meaning": "hội đồng, ban quản trị"
       },
       {
         "id": 126,
         "word": "relentless (adj)",
-        "meaning": "(làm việc) không"
+        "meaning": "(làm việc) không ngừng nghỉ, bền bỉ"
       },
       {
         "id": 127,
@@ -8205,7 +8200,7 @@
       {
         "id": 130,
         "word": "coworker (n)",
-        "meaning": "nghiệp"
+        "meaning": "đồng nghiệp"
       },
       {
         "id": 131,
@@ -8215,7 +8210,7 @@
       {
         "id": 132,
         "word": "pharmaceutical (adj)",
-        "meaning": "thuốc"
+        "meaning": "(thuộc) dược phẩm"
       },
       {
         "id": 133,
@@ -8234,8 +8229,8 @@
       },
       {
         "id": 136,
-        "word": "practical (adScj)an to open",
-        "meaning": "on Stutdheeựrscn etlế"
+        "word": "practical (adj)",
+        "meaning": "thực tế"
       },
       {
         "id": 137,
@@ -8280,7 +8275,7 @@
       {
         "id": 145,
         "word": "outdated (adj)",
-        "meaning": "thời"
+        "meaning": "lỗi thời, hết thời"
       },
       {
         "id": 146,
@@ -8295,12 +8290,12 @@
       {
         "id": 148,
         "word": "light fixture",
-        "meaning": "đèn chùm"
+        "meaning": "thiết bị chiếu sáng, bộ đèn"
       },
       {
         "id": 149,
-        "word": "building",
-        "meaning": "tòa nhà 10"
+        "word": "10-story building",
+        "meaning": "tòa nhà 10 tầng"
       },
       {
         "id": 150,
@@ -8329,8 +8324,8 @@
       },
       {
         "id": 155,
-        "word": "keen (v)",
-        "meaning": "nóng lòng"
+        "word": "keen (adj)",
+        "meaning": "nhạy bén, sâu sắc"
       },
       {
         "id": 156,
@@ -8364,7 +8359,7 @@
       {
         "id": 2,
         "word": "paddle (n)",
-        "meaning": "cánh đồng"
+        "meaning": "mái chèo"
       },
       {
         "id": 3,
@@ -8374,7 +8369,7 @@
       {
         "id": 4,
         "word": "lean (v)",
-        "meaning": "tựa"
+        "meaning": "dựa vào, tựa vào, nghiêng"
       },
       {
         "id": 5,
@@ -8384,7 +8379,7 @@
       {
         "id": 6,
         "word": "quarter (n)",
-        "meaning": "quý"
+        "meaning": "quý (3 tháng)"
       },
       {
         "id": 7,
@@ -8419,7 +8414,7 @@
       {
         "id": 13,
         "word": "branch manager",
-        "meaning": "giám chi nhánh"
+        "meaning": "giám đốc chi nhánh"
       }
     ],
     "Part 3": [
@@ -8430,8 +8425,8 @@
       },
       {
         "id": 15,
-        "word": "autorefractor (n) mắt",
-        "meaning": "và đo xem nó thay đổi"
+        "word": "autorefractor (n)",
+        "meaning": "máy đo khúc xạ mắt"
       },
       {
         "id": 16,
@@ -8445,8 +8440,8 @@
       },
       {
         "id": 18,
-        "word": "up",
-        "meaning": "hơn trong tổ chức bạn"
+        "word": "move up",
+        "meaning": "thăng tiến, lên vị trí cao hơn trong tổ chức"
       },
       {
         "id": 19,
@@ -8491,7 +8486,7 @@
       {
         "id": 27,
         "word": "fit (adj)",
-        "meaning": "vừa"
+        "meaning": "vừa vặn, phù hợp"
       },
       {
         "id": 28,
@@ -8505,8 +8500,8 @@
       },
       {
         "id": 30,
-        "word": "market rearch Scan to onpegnh",
-        "meaning": "oinê Sntu cdeứeurs ntehlị trường"
+        "word": "market research",
+        "meaning": "nghiên cứu thị trường"
       },
       {
         "id": 31,
@@ -8540,8 +8535,8 @@
       },
       {
         "id": 38,
-        "word": "relief (adj)",
-        "meaning": "nhẹ nhõm"
+        "word": "relieved (adj)",
+        "meaning": "nhẹ nhõm, an tâm"
       },
       {
         "id": 39,
@@ -8551,17 +8546,17 @@
       {
         "id": 40,
         "word": "tight spot",
-        "meaning": "hẹp"
+        "meaning": "chỗ hẹp, tình thế khó khăn"
       },
       {
         "id": 41,
         "word": "keep sb in sight",
-        "meaning": "giữ ai đó trong tầm"
+        "meaning": "giữ ai đó trong tầm mắt"
       },
       {
         "id": 42,
-        "word": "mirror",
-        "meaning": "gương hậu"
+        "word": "rearview mirror",
+        "meaning": "gương chiếu hậu"
       },
       {
         "id": 43,
@@ -8570,8 +8565,8 @@
       },
       {
         "id": 44,
-        "word": "injure",
-        "meaning": "thương"
+        "word": "injure (v)",
+        "meaning": "làm bị thương"
       },
       {
         "id": 45,
@@ -8588,7 +8583,7 @@
       {
         "id": 48,
         "word": "as is",
-        "meaning": "trạng thái hiện"
+        "meaning": "trạng thái hiện tại, như hiện trạng"
       },
       {
         "id": 49,
@@ -8598,17 +8593,17 @@
       {
         "id": 50,
         "word": "lucrative (adj)",
-        "meaning": "năng lợi nhuận"
+        "meaning": "sinh lợi, có lợi nhuận cao"
       },
       {
         "id": 51,
         "word": "understudy (n)",
-        "meaning": "người đóng thay (khi"
+        "meaning": "người đóng thay (khi diễn viên chính vắng mặt)"
       },
       {
         "id": 52,
         "word": "intermission (n)",
-        "meaning": "thời gian nghỉ ="
+        "meaning": "thời gian nghỉ giải lao"
       },
       {
         "id": 53,
@@ -8653,7 +8648,7 @@
       {
         "id": 61,
         "word": "expedition (n)",
-        "meaning": "du ngoạn"
+        "meaning": "cuộc thám hiểm, chuyến thám hiểm"
       },
       {
         "id": 62,
@@ -8668,12 +8663,12 @@
       {
         "id": 64,
         "word": "criticism (n)",
-        "meaning": "sự chỉ trích, phê"
+        "meaning": "sự chỉ trích, phê bình"
       },
       {
         "id": 65,
         "word": "factual (adj)",
-        "meaning": "căn cứ theo sự"
+        "meaning": "căn cứ theo sự thật"
       },
       {
         "id": 66,
@@ -8683,7 +8678,7 @@
       {
         "id": 67,
         "word": "ceremonial (adj)",
-        "meaning": "(thuộc) nghi"
+        "meaning": "(thuộc) nghi lễ, nghi thức"
       },
       {
         "id": 68,
@@ -8713,7 +8708,7 @@
       {
         "id": 73,
         "word": "pinch (v)",
-        "meaning": "ấn"
+        "meaning": "bóp, kẹp, véo"
       }
     ],
     "Part 5": [
@@ -8754,7 +8749,7 @@
       },
       {
         "id": 82,
-        "word": "explicity (adj)",
+        "word": "explicit (adj)",
         "meaning": "rõ ràng và chính xác"
       },
       {
@@ -8765,7 +8760,7 @@
       {
         "id": 84,
         "word": "prevent (v)",
-        "meaning": "ngăn ngừa, chống"
+        "meaning": "ngăn ngừa, chống lại, phòng chống"
       },
       {
         "id": 85,
@@ -8792,7 +8787,7 @@
       {
         "id": 89,
         "word": "constantly (adv)",
-        "meaning": "một cách kiên trì"
+        "meaning": "liên tục, không ngừng"
       },
       {
         "id": 90,
@@ -8806,20 +8801,20 @@
       },
       {
         "id": 92,
-        "word": "nurture (v) nuôi",
-        "meaning": "dưỡng, chăm sóc"
+        "word": "nurture (v)",
+        "meaning": "nuôi dưỡng, chăm sóc"
       },
       {
         "id": 93,
         "word": "occupied (adj)",
-        "meaning": "(người)"
+        "meaning": "bận rộn (người), đang được sử dụng"
       }
     ],
     "Part 7": [
       {
         "id": 94,
         "word": "mingle (v)",
-        "meaning": "nói chuyện với"
+        "meaning": "giao lưu, nói chuyện với mọi người"
       },
       {
         "id": 95,
@@ -8838,8 +8833,8 @@
       },
       {
         "id": 99,
-        "word": "breeze (adj)",
-        "meaning": "dễ dàng"
+        "word": "a breeze (n)",
+        "meaning": "điều dễ dàng, việc dễ dàng"
       },
       {
         "id": 100,
@@ -8864,7 +8859,7 @@
       {
         "id": 105,
         "word": "point of view",
-        "meaning": "perspective"
+        "meaning": "quan điểm, góc nhìn"
       },
       {
         "id": 106,
@@ -8903,18 +8898,18 @@
       },
       {
         "id": 113,
-        "word": "fine-tunning lại",
-        "meaning": "cho phù hợp, chính xác"
+        "word": "fine-tuning",
+        "meaning": "tinh chỉnh lại cho phù hợp, chính xác"
       },
       {
         "id": 114,
-        "word": "delight (n)",
-        "meaning": "làm thỏa mãn"
+        "word": "delight (v)",
+        "meaning": "làm thỏa mãn, làm vui lòng"
       },
       {
         "id": 115,
         "word": "superb (adj)",
-        "meaning": "đỉnh"
+        "meaning": "tuyệt vời, xuất sắc"
       },
       {
         "id": 116,
@@ -8924,12 +8919,12 @@
       {
         "id": 117,
         "word": "project (v)",
-        "meaning": "tải = transmit"
+        "meaning": "truyền tải = transmit"
       },
       {
         "id": 118,
         "word": "run (v)",
-        "meaning": "hoạt động (theo ngữ"
+        "meaning": "hoạt động, vận hành (theo ngữ cảnh)"
       },
       {
         "id": 119,
@@ -8944,12 +8939,12 @@
       {
         "id": 121,
         "word": "surpass (v)",
-        "meaning": "vượt qua, thoát khỏi"
+        "meaning": "vượt trội, vượt qua"
       },
       {
         "id": 122,
-        "word": "service",
-        "meaning": "tận nơi"
+        "word": "on-site service",
+        "meaning": "dịch vụ tận nơi"
       },
       {
         "id": 123,
@@ -8979,7 +8974,7 @@
       {
         "id": 128,
         "word": "commitment (n)",
-        "meaning": "kí kết/ họp"
+        "meaning": "sự cam kết, lời cam kết"
       },
       {
         "id": 129,
@@ -8989,7 +8984,7 @@
       {
         "id": 130,
         "word": "culinary (adj)",
-        "meaning": "(thuộc) việc"
+        "meaning": "(thuộc) việc nấu nướng, ẩm thực"
       },
       {
         "id": 131,
@@ -8999,7 +8994,7 @@
       {
         "id": 132,
         "word": "outing (n)",
-        "meaning": "ngoại"
+        "meaning": "chuyến dã ngoại"
       },
       {
         "id": 133,
@@ -9014,7 +9009,7 @@
       {
         "id": 135,
         "word": "dietary (adj)",
-        "meaning": "uống"
+        "meaning": "(thuộc) chế độ ăn uống"
       },
       {
         "id": 136,
@@ -9108,13 +9103,13 @@
       },
       {
         "id": 154,
-        "word": "car",
-        "meaning": "hộp số xe hơi"
+        "word": "car transmission",
+        "meaning": "hộp số xe hơi"
       },
       {
         "id": 155,
-        "word": "steering-repair",
-        "meaning": "bộ dụng cụ sửa chữa"
+        "word": "steering-repair kit",
+        "meaning": "bộ dụng cụ sửa chữa hệ thống lái"
       },
       {
         "id": 156,
@@ -9123,8 +9118,8 @@
       },
       {
         "id": 157,
-        "word": "eager to (v)",
-        "meaning": "háo hức"
+        "word": "eager (adj)",
+        "meaning": "háo hức, tha thiết"
       },
       {
         "id": 158,
@@ -9138,18 +9133,18 @@
       },
       {
         "id": 160,
-        "word": "real eastate",
-        "meaning": "bất động sản"
+        "word": "real estate",
+        "meaning": "bất động sản"
       },
       {
         "id": 161,
         "word": "convert into",
-        "meaning": "turn into"
+        "meaning": "chuyển đổi thành"
       },
       {
         "id": 162,
-        "word": "repurpose (v) dụng",
-        "meaning": "mới cho 1 ý tưởng,"
+        "word": "repurpose (v)",
+        "meaning": "tái sử dụng cho mục đích mới"
       },
       {
         "id": 163,
@@ -9169,7 +9164,7 @@
       {
         "id": 166,
         "word": "applaud (v)",
-        "meaning": "tán tưởng = praise"
+        "meaning": "tán thưởng = praise"
       },
       {
         "id": 167,
@@ -9184,17 +9179,17 @@
       {
         "id": 170,
         "word": "press (n)",
-        "meaning": "bài báo"
+        "meaning": "báo chí, giới báo chí"
       },
       {
         "id": 171,
         "word": "fixture (n)",
-        "meaning": "đứng"
+        "meaning": "đồ đạc cố định, vật cố định"
       },
       {
         "id": 172,
         "word": "worthwhile (adj)",
-        "meaning": "đáng bỏ thời gian,"
+        "meaning": "đáng bỏ thời gian, công sức"
       },
       {
         "id": 173,
@@ -9209,7 +9204,7 @@
       {
         "id": 175,
         "word": "extraordinarily (adv)",
-        "meaning": "thường, phi"
+        "meaning": "cực kỳ, phi thường"
       },
       {
         "id": 176,
@@ -9228,7 +9223,7 @@
       {
         "id": 1,
         "word": "rack (n)",
-        "meaning": "móc quần áo"
+        "meaning": "giá để đồ, giá treo đồ"
       },
       {
         "id": 2,
@@ -9253,7 +9248,7 @@
       {
         "id": 6,
         "word": "nationwide (adj)",
-        "meaning": "toàn"
+        "meaning": "toàn quốc"
       },
       {
         "id": 7,
@@ -9263,12 +9258,12 @@
       {
         "id": 8,
         "word": "diagnostic (adj)",
-        "meaning": "phép chuẩn đoán"
+        "meaning": "(thuộc) chẩn đoán"
       },
       {
         "id": 9,
         "word": "oak (n)",
-        "meaning": "yến mạch"
+        "meaning": "cây sồi, gỗ sồi"
       },
       {
         "id": 10,
@@ -9310,7 +9305,7 @@
       {
         "id": 17,
         "word": "grateful (adj)",
-        "meaning": "lòng biết ơn"
+        "meaning": "biết ơn, cảm kích"
       },
       {
         "id": 18,
@@ -9340,7 +9335,7 @@
       {
         "id": 23,
         "word": "city council",
-        "meaning": "hội thành"
+        "meaning": "hội đồng thành phố"
       },
       {
         "id": 24,
@@ -9360,7 +9355,7 @@
       {
         "id": 27,
         "word": "embroidery (n)",
-        "meaning": "quần áo"
+        "meaning": "đồ thêu, nghệ thuật thêu"
       },
       {
         "id": 28,
@@ -9380,7 +9375,7 @@
       {
         "id": 31,
         "word": "conflict (n)",
-        "meaning": "mâu"
+        "meaning": "mâu thuẫn"
       },
       {
         "id": 32,
@@ -9412,7 +9407,7 @@
       {
         "id": 37,
         "word": "qualification (n)",
-        "meaning": "sự thẩm định"
+        "meaning": "trình độ chuyên môn, bằng cấp"
       },
       {
         "id": 38,
@@ -9447,12 +9442,12 @@
       {
         "id": 44,
         "word": "witness (v)",
-        "meaning": "chứng"
+        "meaning": "chứng kiến"
       },
       {
         "id": 45,
         "word": "span (v)",
-        "meaning": "qua, kéo dài từ A"
+        "meaning": "trải dài qua, kéo dài từ A đến B"
       },
       {
         "id": 46,
@@ -9486,8 +9481,8 @@
       },
       {
         "id": 53,
-        "word": "liaison (nS)can to open",
-        "meaning": "on lSitêunde elạrscne vliên"
+        "word": "liaison (n)",
+        "meaning": "sự liên lạc, người liên lạc"
       }
     ],
     "Part 5": [
@@ -9539,7 +9534,7 @@
       {
         "id": 63,
         "word": "sculpture (n,v)",
-        "meaning": "điêu"
+        "meaning": "tác phẩm điêu khắc, điêu khắc"
       },
       {
         "id": 64,
@@ -9558,8 +9553,8 @@
       },
       {
         "id": 67,
-        "word": "delivery",
-        "meaning": "vận chuyển hỏa tốc"
+        "word": "express delivery",
+        "meaning": "vận chuyển hỏa tốc"
       },
       {
         "id": 68,
@@ -9578,8 +9573,8 @@
       },
       {
         "id": 71,
-        "word": "massive (adScj)an to open",
-        "meaning": "on Stukdheổernsnge llồ"
+        "word": "massive (adj)",
+        "meaning": "khổng lồ, to lớn"
       },
       {
         "id": 72,
@@ -9604,7 +9599,7 @@
       {
         "id": 76,
         "word": "verify (v)",
-        "meaning": "xác minh, kiểm"
+        "meaning": "xác minh, kiểm tra"
       },
       {
         "id": 77,
@@ -9619,7 +9614,7 @@
       {
         "id": 80,
         "word": "token (n)",
-        "meaning": "tiền điện tử"
+        "meaning": "vật tượng trưng, biểu hiện, quà kỷ niệm"
       },
       {
         "id": 81,
@@ -9648,13 +9643,13 @@
       },
       {
         "id": 86,
-        "word": "merchant (v)",
+        "word": "merchant (n)",
         "meaning": "thương nhân"
       },
       {
         "id": 87,
-        "word": "value (vS)can to open",
-        "meaning": "on Stturdâener stnreọlng"
+        "word": "value (v)",
+        "meaning": "trân trọng, coi trọng"
       }
     ],
     "Part 6": [
@@ -9681,12 +9676,12 @@
       {
         "id": 93,
         "word": "ribbon-cutting",
-        "meaning": "băng khánh"
+        "meaning": "cắt băng khánh thành"
       },
       {
         "id": 94,
         "word": "resume (v)",
-        "meaning": "tục sau khi tạm"
+        "meaning": "tiếp tục sau khi tạm dừng"
       },
       {
         "id": 95,
@@ -9701,14 +9696,14 @@
       {
         "id": 97,
         "word": "elected officials",
-        "meaning": "các quan chức được"
+        "meaning": "các quan chức được bầu"
       }
     ],
     "Part 7": [
       {
         "id": 98,
         "word": "minor (adj)",
-        "meaning": "nhỏ, không đáng"
+        "meaning": "nhỏ, không đáng kể"
       },
       {
         "id": 99,
@@ -9718,7 +9713,7 @@
       {
         "id": 100,
         "word": "manufacturer (n)",
-        "meaning": "nhà sản"
+        "meaning": "nhà sản xuất"
       },
       {
         "id": 101,
@@ -9728,12 +9723,12 @@
       {
         "id": 102,
         "word": "format (n)",
-        "meaning": "dạng"
+        "meaning": "định dạng"
       },
       {
         "id": 103,
-        "word": "consortium (n) chính",
-        "meaning": "phủ hợp tác với nhau"
+        "word": "consortium (n)",
+        "meaning": "liên minh, tập đoàn (các tổ chức/chính phủ hợp tác với nhau)"
       },
       {
         "id": 104,
@@ -9768,7 +9763,7 @@
       {
         "id": 111,
         "word": "cutting-edge",
-        "meaning": "loại thuốc tiên tiến"
+        "meaning": "tiên tiến, tối tân"
       },
       {
         "id": 112,
@@ -9778,12 +9773,12 @@
       {
         "id": 113,
         "word": "oral (adj)",
-        "meaning": "miệng"
+        "meaning": "bằng lời nói, bằng miệng"
       },
       {
         "id": 114,
-        "word": "communication",
-        "meaning": "bằng văn bản"
+        "word": "written communication",
+        "meaning": "giao tiếp bằng văn bản"
       },
       {
         "id": 115,
@@ -9807,8 +9802,8 @@
       },
       {
         "id": 119,
-        "word": "production",
-        "meaning": "quy trình sản"
+        "word": "production process",
+        "meaning": "quy trình sản xuất"
       },
       {
         "id": 120,
@@ -9853,7 +9848,7 @@
       {
         "id": 128,
         "word": "exclusively (adv)",
-        "meaning": "duy (phụ"
+        "meaning": "dành riêng, duy nhất"
       },
       {
         "id": 129,
@@ -9903,12 +9898,12 @@
       {
         "id": 138,
         "word": "dispute (n)",
-        "meaning": "sự tranh"
+        "meaning": "sự tranh chấp"
       },
       {
         "id": 139,
         "word": "plaque (n)",
-        "meaning": "giấy khen"
+        "meaning": "bảng vinh danh, kỷ niệm chương"
       },
       {
         "id": 140,
@@ -9928,7 +9923,7 @@
       {
         "id": 143,
         "word": "turnaround (n)",
-        "meaning": "xoay vòng (thuật ngữ"
+        "meaning": "thời gian hoàn thành, sự thay đổi toàn diện"
       },
       {
         "id": 144,
@@ -9938,7 +9933,7 @@
       {
         "id": 145,
         "word": "trigger (v)",
-        "meaning": "kích hoạt (theo"
+        "meaning": "kích hoạt, gây ra"
       },
       {
         "id": 146,
@@ -9958,7 +9953,7 @@
       {
         "id": 150,
         "word": "acclaimed (adj)",
-        "meaning": "dương một cách nhiệt"
+        "meaning": "được ca ngợi, tán dương nhiệt liệt"
       },
       {
         "id": 151,
@@ -9972,8 +9967,8 @@
       },
       {
         "id": 153,
-        "word": "synopsis (n) chuyện",
-        "meaning": "trong một trang"
+        "word": "synopsis (n)",
+        "meaning": "bản tóm tắt (cốt truyện trong một trang)"
       },
       {
         "id": 154,
@@ -10022,7 +10017,7 @@
       {
         "id": 5,
         "word": "municipal (adj)",
-        "meaning": "(thuộc) thành"
+        "meaning": "(thuộc) thành phố, đô thị"
       },
       {
         "id": 6,
@@ -10031,7 +10026,7 @@
       },
       {
         "id": 7,
-        "word": "stich (v)",
+        "word": "stitch (v)",
         "meaning": "khâu"
       },
       {
@@ -10046,8 +10041,8 @@
       },
       {
         "id": 11,
-        "word": "traffic",
-        "meaning": "kẹt xe"
+        "word": "traffic jam",
+        "meaning": "kẹt xe, ùn tắc giao thông"
       },
       {
         "id": 12,
@@ -10098,8 +10093,8 @@
       },
       {
         "id": 21,
-        "word": "conscious (adj) tỉnh",
-        "meaning": "táo, có nhận thức"
+        "word": "conscious (adj)",
+        "meaning": "tỉnh táo, có nhận thức"
       },
       {
         "id": 22,
@@ -10151,7 +10146,7 @@
       {
         "id": 31,
         "word": "southernmost",
-        "meaning": "cực nam của bán đảo"
+        "meaning": "(ở) cực nam, xa nhất về phía nam"
       },
       {
         "id": 32,
@@ -10171,7 +10166,7 @@
       {
         "id": 35,
         "word": "walk-in client",
-        "meaning": "mà không hẹn trước)"
+        "meaning": "khách vãng lai (khách đến mà không hẹn trước)"
       },
       {
         "id": 36,
@@ -10181,11 +10176,11 @@
       {
         "id": 37,
         "word": "courthouse (n)",
-        "meaning": "toàn án"
+        "meaning": "tòa án"
       },
       {
         "id": 38,
-        "word": "belt",
+        "word": "seat belt",
         "meaning": "dây an toàn"
       },
       {
@@ -10198,17 +10193,17 @@
       {
         "id": 40,
         "word": "draft (v)",
-        "meaning": "phác thảo, ghi"
+        "meaning": "phác thảo, soạn thảo"
       },
       {
         "id": 41,
         "word": "silk (n)",
-        "meaning": "lụa"
+        "meaning": "lụa, tơ lụa"
       },
       {
         "id": 42,
         "word": "garment (n)",
-        "meaning": "mảnh vải"
+        "meaning": "quần áo, trang phục"
       },
       {
         "id": 43,
@@ -10223,7 +10218,7 @@
       {
         "id": 45,
         "word": "mesh bag",
-        "meaning": "bao đa dụng"
+        "meaning": "túi lưới, túi giặt lưới"
       },
       {
         "id": 46,
@@ -10233,14 +10228,14 @@
       {
         "id": 47,
         "word": "hassle-free (adj)",
-        "meaning": "giản, dễ dàng"
+        "meaning": "đơn giản, dễ dàng"
       }
     ],
     "Part 7": [
       {
         "id": 48,
-        "word": "weather",
-        "meaning": "kiểu thời tiết"
+        "word": "weather pattern",
+        "meaning": "kiểu thời tiết"
       },
       {
         "id": 49,
@@ -10265,7 +10260,7 @@
       {
         "id": 53,
         "word": "adhesive (adj)",
-        "meaning": "băng keo"
+        "meaning": "dính, có tính bám dính"
       },
       {
         "id": 54,
@@ -10275,12 +10270,12 @@
       {
         "id": 55,
         "word": "dust (n)",
-        "meaning": "bụi"
+        "meaning": "bụi, bụi bẩn"
       },
       {
         "id": 56,
-        "word": "breeze (adj)",
-        "meaning": "dễ dàng"
+        "word": "breeze (n)",
+        "meaning": "điều dễ dàng, việc dễ dàng"
       },
       {
         "id": 57,
@@ -10309,8 +10304,8 @@
       },
       {
         "id": 63,
-        "word": "fiscal (n)",
-        "meaning": "tài khóa"
+        "word": "fiscal (adj)",
+        "meaning": "(thuộc) tài chính, tài khóa"
       },
       {
         "id": 64,
@@ -10324,8 +10319,8 @@
       },
       {
         "id": 66,
-        "word": "write-up (n) bản",
-        "meaning": "ghi, bảng báo cáo"
+        "word": "write-up (n)",
+        "meaning": "bản ghi, bản báo cáo"
       },
       {
         "id": 67,
@@ -10340,7 +10335,7 @@
       {
         "id": 70,
         "word": "finding (n)",
-        "meaning": "sự khám phá, sự phát"
+        "meaning": "sự khám phá, sự phát hiện"
       },
       {
         "id": 71,
@@ -10349,8 +10344,8 @@
       },
       {
         "id": 72,
-        "word": "supplement (n) thực",
-        "meaning": "phẩm chức năng"
+        "word": "supplement (n)",
+        "meaning": "thực phẩm chức năng, phần bổ sung"
       },
       {
         "id": 73,
@@ -10370,7 +10365,7 @@
       {
         "id": 76,
         "word": "eligible (adj)",
-        "meaning": "cách"
+        "meaning": "đủ tư cách, đủ điều kiện"
       },
       {
         "id": 77,
@@ -10380,7 +10375,7 @@
       {
         "id": 78,
         "word": "rough version",
-        "meaning": "bản thô (chưa qua"
+        "meaning": "bản thô (chưa qua chỉnh sửa)"
       },
       {
         "id": 79,
@@ -10394,8 +10389,8 @@
       },
       {
         "id": 81,
-        "word": "cruet (n )",
-        "meaning": "lọ (đựng"
+        "word": "cruet (n)",
+        "meaning": "lọ (đựng dầu, giấm, gia vị)"
       }
     ]
   }

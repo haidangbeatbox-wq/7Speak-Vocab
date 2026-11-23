@@ -1476,9 +1476,9 @@
       <span class="tts-label">🔊 Phát âm tự động:</span>
       <button class="tts-toggle on" id="ttsToggle" onclick="toggleAutoSpeak()">✅ Bật</button>
       <span class="tts-label" style="margin-left:6px">Tốc độ:</span>
-      <button class="speed-btn active" id="speedSlow" onclick="setSpeed(0.75, this)">🐢 Chậm</button>
-      <button class="speed-btn" id="speedNormal" onclick="setSpeed(1, this)">🚶 Bình thường</button>
-      <button class="speed-btn" id="speedFast" onclick="setSpeed(1.3, this)">🐇 Nhanh</button>
+      <button class="speed-btn" id="speedSlow" onclick="setSpeed(0.85, this)">🐢 Chậm</button>
+      <button class="speed-btn active" id="speedNormal" onclick="setSpeed(1, this)">🚶 Chuẩn</button>
+      <button class="speed-btn" id="speedFast" onclick="setSpeed(1.2, this)">🐇 Nhanh</button>
     </div>
 
     <!-- Part tabs -->
@@ -1547,7 +1547,7 @@ let gameState = {
 // ===== TTS STATE =====
 const ttsState = {
   autoSpeak: true,
-  speed: 0.75,
+  speed: 1.0,
   synth: window.speechSynthesis,
   voices: [],
   enVoice: null,
@@ -1555,15 +1555,22 @@ const ttsState = {
 };
 
 function loadVoices() {
+  if (!ttsState.synth) return;
   ttsState.voices = ttsState.synth.getVoices();
-  // Prefer native English voices
+
+  // Prioritize high-quality English voices
   ttsState.enVoice =
+    ttsState.voices.find(v => v.lang === 'en-US' && (v.name.includes('Natural') || v.name.includes('Online'))) ||
+    ttsState.voices.find(v => v.lang === 'en-US' && v.name.includes('Google')) ||
     ttsState.voices.find(v => v.lang === 'en-US' && v.localService) ||
     ttsState.voices.find(v => v.lang.startsWith('en-US')) ||
     ttsState.voices.find(v => v.lang.startsWith('en'));
+
+  // Prioritize natural/online Vietnamese voices (HoaiMy, NamMinh, Google tiếng Việt)
   ttsState.viVoice =
-    ttsState.voices.find(v => v.lang === 'vi-VN') ||
-    ttsState.voices.find(v => v.lang.startsWith('vi'));
+    ttsState.voices.find(v => (v.lang === 'vi-VN' || v.lang.startsWith('vi')) && (v.name.includes('Natural') || v.name.includes('Online'))) ||
+    ttsState.voices.find(v => (v.lang === 'vi-VN' || v.lang.startsWith('vi')) && v.name.includes('Google')) ||
+    ttsState.voices.find(v => v.lang === 'vi-VN' || v.lang.startsWith('vi'));
 }
 
 // Voices load asynchronously in some browsers
@@ -1572,22 +1579,54 @@ if (window.speechSynthesis) {
   window.speechSynthesis.onvoiceschanged = loadVoices;
 }
 
-function speakWord(text, lang) {
-  // Clean text: strip part-of-speech tags like (n), (v) etc.
-  const clean = text.replace(/\([^)]*\)/g, '').replace(/[,;]/g, '').trim();
-  if (!clean) return;
+function cleanEnglishText(text) {
+  if (!text) return '';
+  return text
+    .replace(/\([^)]*\)/g, '')
+    .replace(/[=].*/g, '')
+    .replace(/[,;]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
 
+function cleanVietnameseText(text) {
+  if (!text) return '';
+  let clean = text
+    .replace(/\([^)]*\)/g, '')            // Remove explanatory notes in parentheses
+    .replace(/[=].*/g, '')                // Remove English translations like = free, = get
+    .replace(/\b(v|n|adj|adv)\b:?/gi, '') // Remove leftover part-of-speech markers
+    .replace(/[•\-\*\~]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  // Take at most the first 2 distinct synonyms to keep pronunciation crisp and natural
+  const parts = clean.split(/[,;\/]/).map(s => s.trim()).filter(Boolean);
+  if (parts.length > 2) {
+    clean = parts.slice(0, 2).join(', ');
+  } else if (parts.length > 0) {
+    clean = parts.join(', ');
+  }
+  return clean;
+}
+
+function speakWord(text, lang) {
+  if (!text) return;
   stopSpeak();
 
-  // For Vietnamese: use Google Translate TTS (much better quality)
+  // For Vietnamese pronunciation
   if (lang === 'vi-VN') {
-    speakVietnamese(clean);
+    const cleanVi = cleanVietnameseText(text);
+    if (!cleanVi) return;
+    speakVietnamese(cleanVi);
     return;
   }
 
-  // For English: use Web Speech API
+  // For English pronunciation
+  const cleanEn = cleanEnglishText(text);
+  if (!cleanEn) return;
+
   if (!ttsState.synth) return;
-  const utt = new SpeechSynthesisUtterance(clean);
+  const utt = new SpeechSynthesisUtterance(cleanEn);
   utt.lang = lang || 'en-US';
   utt.rate = ttsState.speed;
   utt.pitch = 1.0;
@@ -1610,9 +1649,37 @@ function speakWord(text, lang) {
   ttsState.synth.speak(utt);
 }
 
-// Vietnamese TTS via Google Translate audio
+// Vietnamese TTS: uses high-quality Web Speech API if available, with Google TTS fallback
 let viAudio = null;
 function speakVietnamese(text) {
+  // If browser has a dedicated Vietnamese voice (Edge Natural or Google), use it for crystal clear speech
+  if (ttsState.synth && ttsState.viVoice) {
+    const utt = new SpeechSynthesisUtterance(text);
+    utt.lang = 'vi-VN';
+    utt.voice = ttsState.viVoice;
+    utt.rate = Math.max(0.85, Math.min(ttsState.speed, 1.15));
+    utt.pitch = 1.0;
+
+    const btn = document.getElementById('speakBtnMain');
+    if (btn) btn.classList.add('speaking');
+
+    utt.onend = () => {
+      if (btn) btn.classList.remove('speaking');
+    };
+    utt.onerror = () => {
+      if (btn) btn.classList.remove('speaking');
+      playGoogleVietnameseTTS(text);
+    };
+
+    ttsState.synth.speak(utt);
+    return;
+  }
+
+  // Fallback to Google Translate TTS
+  playGoogleVietnameseTTS(text);
+}
+
+function playGoogleVietnameseTTS(text) {
   if (viAudio) {
     viAudio.pause();
     viAudio.currentTime = 0;
@@ -1626,7 +1693,8 @@ function speakVietnamese(text) {
   const url = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encoded}&tl=vi&client=tw-ob`;
 
   viAudio = new Audio(url);
-  viAudio.playbackRate = Math.max(0.5, Math.min(ttsState.speed, 2.0));
+  // Keep 1.0x native playback rate to avoid phase-vocoder time-stretch distortion on tonal vowels
+  viAudio.playbackRate = 1.0;
 
   viAudio.onended = () => {
     if (btn) btn.classList.remove('speaking');
@@ -1635,24 +1703,21 @@ function speakVietnamese(text) {
   viAudio.onerror = () => {
     if (btn) btn.classList.remove('speaking');
     viAudio = null;
-    // Fallback: try Web Speech API if Google TTS fails
+    // Fallback: try Web Speech API even without matched voice
     if (ttsState.synth) {
       const utt = new SpeechSynthesisUtterance(text);
       utt.lang = 'vi-VN';
-      utt.rate = ttsState.speed;
-      if (ttsState.viVoice) utt.voice = ttsState.viVoice;
+      utt.rate = 0.9;
       ttsState.synth.speak(utt);
     }
   };
 
   viAudio.play().catch(() => {
     if (btn) btn.classList.remove('speaking');
-    // Fallback to Web Speech API
     if (ttsState.synth) {
       const utt = new SpeechSynthesisUtterance(text);
       utt.lang = 'vi-VN';
-      utt.rate = ttsState.speed;
-      if (ttsState.viVoice) utt.voice = ttsState.viVoice;
+      utt.rate = 0.9;
       ttsState.synth.speak(utt);
     }
   });
@@ -1662,7 +1727,6 @@ function stopSpeak() {
   if (ttsState.synth && ttsState.synth.speaking) {
     ttsState.synth.cancel();
   }
-  // Also stop Vietnamese Google TTS audio
   if (viAudio) {
     viAudio.pause();
     viAudio.currentTime = 0;
@@ -1789,6 +1853,12 @@ function selectMode(el) {
 }
 
 function updateHomeStats() {
+  const totalWords = Object.values(VOCAB_DATA).reduce((sum, test) => {
+    return sum + Object.values(test).reduce((tSum, part) => tSum + (Array.isArray(part) ? part.length : 0), 0);
+  }, 0);
+  const totalDisplay = document.getElementById('totalWordsDisplay');
+  if (totalDisplay && totalWords > 0) totalDisplay.textContent = totalWords;
+
   const progress = JSON.parse(localStorage.getItem('toeicProgress') || '{}');
   const mastered = Object.values(progress.mastered || {}).filter(Boolean).length;
   const best = progress.bestScore || 0;
@@ -1917,11 +1987,13 @@ function showQuestion() {
     showReverseQuestion(word, area);
   }
 
-  // Auto-pronounce the English word (or Vietnamese for reverse mode)
-  const textToSpeak = (gameState.mode === 'reverse') ? null : word.word;
-  if (textToSpeak && ttsState.autoSpeak) {
-    // Small delay so UI renders first
-    setTimeout(() => speakWord(textToSpeak, 'en-US'), 300);
+  // Auto-pronounce: English for normal modes, Vietnamese for reverse mode
+  if (ttsState.autoSpeak) {
+    if (gameState.mode === 'reverse') {
+      setTimeout(() => speakWord(word.meaning, 'vi-VN'), 300);
+    } else {
+      setTimeout(() => speakWord(word.word, 'en-US'), 300);
+    }
   }
 
   // Start timer
@@ -1958,7 +2030,10 @@ function showReverseQuestion(word, area) {
     <div class="question-badge">🔄 ${word.part} • ${word.test}</div>
     <div class="question-card">
       <div class="question-word">${word.meaning}</div>
-      <div class="question-hint">Từ tiếng Anh tương ứng là gì?</div>
+      <button class="speak-btn" id="speakBtnMain" onclick="speakWord('${escapeQuote(word.meaning)}', 'vi-VN')">
+        <span class="speak-icon">🔊</span> Nghe tiếng Việt
+      </button>
+      <div class="question-hint" style="margin-top:10px">Từ tiếng Anh tương ứng là gì?</div>
     </div>
     <div class="options-grid" id="optionsGrid">
       ${options.map((opt, i) => `
@@ -2009,9 +2084,12 @@ function showFlashcard(word, area) {
         </div>
       </div>
     </div>
-    <div style="display:flex;justify-content:center;margin-bottom:12px">
+    <div style="display:flex;justify-content:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
       <button class="speak-btn" id="speakBtnMain" onclick="event.stopPropagation();speakWord('${escapeQuote(word.word)}', 'en-US')">
-        <span class="speak-icon">🔊</span> Nghe phát âm
+        <span class="speak-icon">🔊</span> Tiếng Anh
+      </button>
+      <button class="speak-btn" style="border-color:rgba(16,185,129,0.4);color:#34d399;background:rgba(16,185,129,0.15);" onclick="event.stopPropagation();speakWord('${escapeQuote(word.meaning)}', 'vi-VN')">
+        <span class="speak-icon">🔊</span> Tiếng Việt
       </button>
     </div>
     <div class="fc-actions" id="fcActions" style="display:none">
@@ -2382,19 +2460,29 @@ function generateOptions(word, field, count) {
 }
 
 function fuzzyMatch(input, target) {
-  if (!input) return false;
+  if (!input || !target) return false;
   const norm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
   const ni = norm(input);
   const nt = norm(target);
   
   if (ni === nt) return true;
-  if (nt.includes(ni) && ni.length > 2) return true;
   
-  // Check if any word in input matches a word in target
-  const iWords = ni.split(/\s+/);
-  const tWords = nt.split(/\s+/);
-  const matchCount = iWords.filter(w => tWords.includes(w) && w.length > 1).length;
-  return matchCount >= Math.ceil(Math.min(iWords.length, tWords.length) * 0.6);
+  // Check individual comma/semicolon/slash separated meanings
+  const parts = target.split(/[,;\/]/).map(p => norm(p.replace(/\([^)]*\)/g, ''))).filter(Boolean);
+  for (const part of parts) {
+    if (ni === part) return true;
+    if (part.includes(ni) && ni.length >= 2) return true;
+    if (ni.includes(part) && part.length >= 2) return true;
+  }
+  
+  if (nt.includes(ni) && ni.length >= 2) return true;
+  
+  // Check if key words match
+  const iWords = ni.split(/\s+/).filter(w => w.length > 1);
+  const tWords = nt.split(/\s+/).filter(w => w.length > 1);
+  if (iWords.length === 0 || tWords.length === 0) return false;
+  const matchCount = iWords.filter(w => tWords.includes(w)).length;
+  return matchCount >= Math.ceil(Math.min(iWords.length, tWords.length) * 0.5);
 }
 
 function shuffle(arr) {
