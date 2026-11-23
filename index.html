@@ -1634,22 +1634,14 @@ function cleanEnglishText(text) {
 
 function cleanVietnameseText(text) {
   if (!text) return '';
-  let clean = text
+  return text
     .replace(/\([^)]*\)/g, '')            // Remove explanatory notes in parentheses
     .replace(/[=].*/g, '')                // Remove English translations like = free, = get
     .replace(/\b(v|n|adj|adv)\b:?/gi, '') // Remove leftover part-of-speech markers
     .replace(/[•\-\*\~]/g, ' ')
+    .replace(/[\/]/g, ', ')               // Replace slash with comma for natural TTS pause
     .replace(/\s+/g, ' ')
     .trim();
-
-  // Take at most the first 2 distinct synonyms to keep pronunciation crisp and natural
-  const parts = clean.split(/[,;\/]/).map(s => s.trim()).filter(Boolean);
-  if (parts.length > 2) {
-    clean = parts.slice(0, 2).join(', ');
-  } else if (parts.length > 0) {
-    clean = parts.join(', ');
-  }
-  return clean;
 }
 
 function speakEnglish(text, onEnd) {
@@ -1734,7 +1726,7 @@ function speakVietnamese(text, onEnd) {
 
       utt.onend = finish;
       utt.onerror = () => {
-        finish();
+        animateSpeakButtons('', 'vi');
         playGoogleVietnameseAudio(clean, onEnd);
       };
 
@@ -2242,14 +2234,30 @@ function answerQuiz(btn, selected, correct) {
     onWrong();
   }
 
-  // Always pronounce the Vietnamese meaning when an answer is selected
-  setTimeout(() => speakVietnamese(word.meaning), 400);
-
-  setTimeout(() => {
+  let advanced = false;
+  let safetyTimeout = null;
+  const advance = () => {
+    if (advanced) return;
+    advanced = true;
+    if (safetyTimeout) clearTimeout(safetyTimeout);
     gameState.isAnswered = false;
     gameState.currentIndex++;
     showQuestion();
-  }, 2200);
+  };
+
+  if (ttsState.mode !== 'off') {
+    setTimeout(() => {
+      speakVietnamese(word.meaning, () => {
+        setTimeout(advance, 600);
+      });
+    }, 300);
+
+    const cleanVi = cleanVietnameseText(word.meaning);
+    const maxWait = Math.max(3000, Math.min(8000, cleanVi.length * 120 + 2000));
+    safetyTimeout = setTimeout(advance, maxWait);
+  } else {
+    safetyTimeout = setTimeout(advance, 1400);
+  }
 }
 
 function answerReverseQuiz(btn, selected, correct) {
@@ -2275,13 +2283,29 @@ function answerReverseQuiz(btn, selected, correct) {
     onWrong();
   }
 
-  setTimeout(() => speakEnglish(correct), 400);
-
-  setTimeout(() => {
+  let advanced = false;
+  let safetyTimeout = null;
+  const advance = () => {
+    if (advanced) return;
+    advanced = true;
+    if (safetyTimeout) clearTimeout(safetyTimeout);
     gameState.isAnswered = false;
     gameState.currentIndex++;
     showQuestion();
-  }, 2000);
+  };
+
+  if (ttsState.mode !== 'off') {
+    setTimeout(() => {
+      speakEnglish(correct, () => {
+        setTimeout(advance, 600);
+      });
+    }, 300);
+
+    const maxWait = Math.max(2500, correct.length * 100 + 1500);
+    safetyTimeout = setTimeout(advance, maxWait);
+  } else {
+    safetyTimeout = setTimeout(advance, 1400);
+  }
 }
 
 function checkTyping() {
@@ -2297,6 +2321,7 @@ function checkTyping() {
   
   gameState.isAnswered = true;
   clearTimer();
+  stopSpeak();
   input.disabled = true;
 
   if (isCorrect) {
@@ -2312,14 +2337,30 @@ function checkTyping() {
     onWrong();
   }
 
-  // Pronounce the Vietnamese meaning
-  setTimeout(() => speakVietnamese(word.meaning), 350);
-
-  setTimeout(() => {
+  let advanced = false;
+  let safetyTimeout = null;
+  const advance = () => {
+    if (advanced) return;
+    advanced = true;
+    if (safetyTimeout) clearTimeout(safetyTimeout);
     gameState.isAnswered = false;
     gameState.currentIndex++;
     showQuestion();
-  }, 2200);
+  };
+
+  if (ttsState.mode !== 'off') {
+    setTimeout(() => {
+      speakVietnamese(word.meaning, () => {
+        setTimeout(advance, 700);
+      });
+    }, 300);
+
+    const cleanVi = cleanVietnameseText(word.meaning);
+    const maxWait = Math.max(3000, Math.min(8000, cleanVi.length * 120 + 2000));
+    safetyTimeout = setTimeout(advance, maxWait);
+  } else {
+    safetyTimeout = setTimeout(advance, 1600);
+  }
 }
 
 function flipCard(wrap) {
