@@ -2199,22 +2199,20 @@ function showQuestion() {
     showReverseQuestion(word, area);
   }
 
-  // Auto-pronounce according to ttsState.mode
+  // Auto-pronounce prompt only (do NOT reveal the answer before user selects!)
   if (ttsState.mode !== 'off') {
     setTimeout(() => {
       if (gameState.mode === 'reverse') {
+        // In reverse quiz: Question prompt is Vietnamese, options are English.
+        // Pronounce ONLY Vietnamese prompt.
         if (ttsState.mode === 'both' || ttsState.mode === 'vi') {
           speakVietnamese(word.meaning);
-        } else if (ttsState.mode === 'en') {
-          speakEnglish(word.word);
         }
       } else {
-        if (ttsState.mode === 'both') {
-          speakWordPair(word.word, word.meaning);
-        } else if (ttsState.mode === 'en') {
+        // In quiz, typing, flashcard: Question prompt is English, answer is Vietnamese.
+        // Pronounce ONLY English prompt. Never reveal the Vietnamese meaning before selection!
+        if (ttsState.mode === 'both' || ttsState.mode === 'en') {
           speakEnglish(word.word);
-        } else if (ttsState.mode === 'vi') {
-          speakVietnamese(word.meaning);
         }
       }
     }, 300);
@@ -2388,7 +2386,7 @@ function answerQuiz(btn, selected, correct) {
     showQuestion();
   };
 
-  if (ttsState.mode !== 'off') {
+  if (ttsState.mode !== 'off' && (ttsState.mode === 'both' || ttsState.mode === 'vi')) {
     setTimeout(() => {
       speakVietnamese(word.meaning, () => {
         setTimeout(advance, 600);
@@ -2437,7 +2435,7 @@ function answerReverseQuiz(btn, selected, correct) {
     showQuestion();
   };
 
-  if (ttsState.mode !== 'off') {
+  if (ttsState.mode !== 'off' && (ttsState.mode === 'both' || ttsState.mode === 'en')) {
     setTimeout(() => {
       speakEnglish(correct, () => {
         setTimeout(advance, 600);
@@ -2491,7 +2489,7 @@ function checkTyping() {
     showQuestion();
   };
 
-  if (ttsState.mode !== 'off') {
+  if (ttsState.mode !== 'off' && (ttsState.mode === 'both' || ttsState.mode === 'vi')) {
     setTimeout(() => {
       speakVietnamese(word.meaning, () => {
         setTimeout(advance, 700);
@@ -2508,9 +2506,19 @@ function checkTyping() {
 
 function flipCard(wrap) {
   const card = document.getElementById('flashcard');
+  if (!card) return;
   card.classList.toggle('flipped');
-  if (card.classList.contains('flipped')) {
+  const isFlipped = card.classList.contains('flipped');
+  const word = gameState.currentWords[gameState.currentIndex];
+  if (isFlipped) {
     document.getElementById('fcActions').style.display = 'grid';
+    if (word && (ttsState.mode === 'both' || ttsState.mode === 'vi')) {
+      speakVietnamese(word.meaning);
+    }
+  } else {
+    if (word && (ttsState.mode === 'both' || ttsState.mode === 'en')) {
+      speakEnglish(word.word);
+    }
   }
 }
 
